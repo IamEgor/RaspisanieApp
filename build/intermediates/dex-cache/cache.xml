@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="C:\Users\Егор\Documents\Raspisanie1\app\build\intermediates\pre-dexed\debug\acra-4.6.1-facae506ead79f1002e189a9799a923adcc9161b.jar"
+        jar="C:\Users\Егор\Documents\Raspisanie1\app\libs\acra-4.6.1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="60a854db6e9445f56efc72bfb3da39f583eb6e89"/>
+    <item
+        dex="C:\Users\Егор\Documents\Raspisanie1\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-e8253872a0e43f9a6ca1db314c77f57612d3e570.jar"
+        jar="C:\Users\Егор\Documents\Raspisanie1\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504"/>
+    <item
+        dex="C:\Users\Егор\Documents\Raspisanie1\app\build\intermediates\pre-dexed\debug\classes-3886974f01ea0c0ccf5465c7ebd9726104ea7a2f.jar"
+        jar="C:\Users\Егор\Documents\Raspisanie1\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d"/>
+    <item
+        dex="C:\Users\Егор\Documents\Raspisanie1\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-a7a17363c6f26dc6d5e5748b871f38f3b3a991bf.jar"
+        jar="C:\Users\Егор\AppData\Local\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8"/>
+    <item
+        dex="C:\Users\Егор\Documents\Raspisanie1\app\build\intermediates\pre-dexed\debug\jsoup-1.8.1-756f711adf4e48b814b607e9d170ca03249f4ef7.jar"
+        jar="C:\Users\Егор\Documents\Raspisanie1\app\libs\jsoup-1.8.1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="3d57e95c0f150b885ccdbda7a12bef353fd31d02"/>
+
+</pre-dex-items>

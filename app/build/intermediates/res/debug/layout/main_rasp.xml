@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/viewPager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+ 
+    <android.support.v4.view.PagerTabStrip
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:textColor="#ffffffff"
+        android:background="#ff000000"
+        android:id="@+id/pagerTabStrip"/>
+        
+</android.support.v4.view.ViewPager><!-- From: file:/C:/Users/Егор/Documents/Raspisanie1/app/src/main/res/layout/main_rasp.xml -->
