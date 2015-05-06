@@ -20,4 +20,7 @@
     <string name="numbers_pattern">\d{1,2}</string>
     <string name="day_names_pattern">(пн|вт|ср|чт|пт|сб|вск)+</string>
 
+    <string name="UpdateRasp">Обновить расписание</string>
+    <string name="LastUpdate">Последнее обновление</string>
+
 </resources>

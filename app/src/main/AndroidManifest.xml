@@ -11,12 +11,14 @@
         android:allowBackup="true"
         android:icon="@drawable/parovoz"
         android:label="@string/app_name"
-        android:theme="@style/CustomActionBarTheme" >
+        android:theme="@style/CustomActionBarTheme"
+        >
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:windowSoftInputMode="stateHidden|adjustResize"
-            android:launchMode="singleTop">
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,11 +27,13 @@
         </activity>
         <activity
             android:name=".RaspActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".MenuActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
         </activity>
 
         <service
@@ -37,6 +41,10 @@
             android:enabled="true"
             android:exported="true" >
         </service>
+
+        <reciever
+            android:name=".NotificationReciever"
+          />
     </application>
 
 </manifest>

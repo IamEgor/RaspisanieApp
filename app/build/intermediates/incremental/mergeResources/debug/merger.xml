@@ -192,11 +192,15 @@
                 </string>
                 <string name="update_sentence" >Последнее обновление : 
                 </string>
+                <string name="LastUpdate" >Последнее обновление
+                </string>
                 <string name="no_connection" >Нет интернет соединения 
                 </string>
                 <string name="nedavnie" >       недавние
                 </string>
                 <string name="numbers_pattern" >\d{1,2}
+                </string>
+                <string name="UpdateRasp" >Обновить расписание
                 </string>
                 <string name="rasp" >ПОКАЗАТЬ РАСПИСАНИЕ
                 </string>
@@ -243,6 +247,53 @@
                 path="C:\Users\Егор\Documents\Raspisanie1\app\src\main\res\values\text_styles.xml"
                 qualifiers="" >
 
+                <style name="EditTextStyle" >
+                    <item name="android:layout_width">
+match_parent
+                    </item>
+                    <item name="android:layout_height">
+50dp
+                    </item>
+                    <item name="android:layout_marginLeft">
+32dp
+                    </item>
+                    <item name="android:layout_marginRight">
+32dp
+                    </item>
+                    <item name="android:ems">
+10
+                    </item>
+                    <item name="android:padding">
+10dp
+                    </item>
+                    <item name="android:background">
+@drawable/bg_input_normal
+                    </item>
+                </style>
+
+                <style name="ToggleButton" >
+                    <item name="android:layout_width">
+35dp
+                    </item>
+                    <item name="android:layout_height">
+35dp
+                    </item>
+                    <item name="android:scaleType">
+fitXY
+                    </item>
+                    <item name="android:textOff"/>
+                    <item name="android:textOn"/>
+                    <item name="android:focusable">
+false
+                    </item>
+                    <item name="android:layout_centerVertical">
+true
+                    </item>
+                    <item name="android:background">
+@drawable/custom_checkbox
+                    </item>
+                </style>
+
                 <style name="Nedavnie" >
                     <item name="android:layout_width">
 wrap_content
@@ -255,6 +306,78 @@ wrap_content
                     </item>
                     <item name="android:textSize">
 19sp
+                    </item>
+                </style>
+
+                <style name="TextViewListItemNed" >
+                    <item name="android:layout_width">
+match_parent
+                    </item>
+                    <item name="android:layout_height">
+wrap_content
+                    </item>
+                    <item name="android:layout_centerVertical">
+true
+                    </item>
+                    <item name="android:textAppearance">
+?android:attr/textAppearanceMedium
+                    </item>
+                    <item name="android:focusable">
+false
+                    </item>
+                </style>
+
+                <style name="StyleTabStrip" >
+                    <item name="android:layout_width">
+match_parent
+                    </item>
+                    <item name="android:layout_height">
+wrap_content
+                    </item>
+                    <item name="android:layout_gravity">
+top
+                    </item>
+                    <item name="android:textColor">
+#ffffffff
+                    </item>
+                    <item name="android:background">
+#ff000000
+                    </item>
+                </style>
+
+                <style name="ButtonChange" >
+                    <item name="android:layout_width">
+40dp
+                    </item>
+                    <item name="android:layout_height">
+40dp
+                    </item>
+                    <item name="android:alpha">
+1
+                    </item>
+                    <item name="android:background">
+@drawable/custom_button_change
+                    </item>
+                </style>
+
+                <style name="ButtonShow" >
+                    <item name="android:layout_width">
+match_parent
+                    </item>
+                    <item name="android:layout_height">
+50dp
+                    </item>
+                    <item name="android:layout_marginLeft">
+25dp
+                    </item>
+                    <item name="android:layout_marginRight">
+25dp
+                    </item>
+                    <item name="android:textColor">
+#ffffffff
+                    </item>
+                    <item name="android:background">
+@drawable/custom_button_center
                     </item>
                 </style>
             </file>
@@ -291,11 +414,6 @@ wrap_content
                 path="C:\Users\Егор\Documents\Raspisanie1\app\src\main\res\menu\menu2.xml"
                 qualifiers=""
                 type="menu" />
-            <file
-                name="menu_activity"
-                path="C:\Users\Егор\Documents\Raspisanie1\app\src\main\res\layout\menu_activity.xml"
-                qualifiers=""
-                type="layout" />
             <file
                 path="C:\Users\Егор\Documents\Raspisanie1\app\src\main\res\values\arrays.xml"
                 qualifiers="" >
@@ -447,6 +565,26 @@ Sunday
                 path="C:\Users\Егор\Documents\Raspisanie1\app\src\main\res\drawable-hdpi\parovoz_small.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
+            <file
+                name="menu_activity"
+                path="C:\Users\Егор\Documents\Raspisanie1\app\src\main\res\layout\menu_activity.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="ic_star_selected"
+                path="C:\Users\Егор\Documents\Raspisanie1\app\src\main\res\drawable-hdpi\ic_star_selected.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_star_not_selected"
+                path="C:\Users\Егор\Documents\Raspisanie1\app\src\main\res\drawable-hdpi\ic_star_not_selected.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="menu_toggle"
+                path="C:\Users\Егор\Documents\Raspisanie1\app\src\main\res\menu\menu_toggle.xml"
+                qualifiers=""
+                type="menu" />
         </source>
         <source path="C:\Users\Егор\Documents\Raspisanie1\app\build\generated\res\rs\debug" />
         <source path="C:\Users\Егор\Documents\Raspisanie1\app\build\generated\res\generated\debug" />

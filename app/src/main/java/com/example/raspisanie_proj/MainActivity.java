@@ -11,8 +11,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.BitmapFactory;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -26,11 +24,6 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.Locale;
 
 public class MainActivity extends FragmentActivity {
 
@@ -49,7 +42,7 @@ public class MainActivity extends FragmentActivity {
         strip.setTabIndicatorColor(0x0060b7);
         strip.setMinimumHeight(7);
 
-
+        Log.d("MainActivity", "onCreate");
     }
 
 
@@ -60,8 +53,8 @@ public class MainActivity extends FragmentActivity {
         Log.d("MainActiv", "onResume");
         String updateStatus = MyPrefs.getStringPrefs(MainActivity.this, MenuActivity.UPDATE_STATUS);
         Log.d("MainActiv", "updateStatus = " + updateStatus);
-        if (updateStatus.equals(MenuActivity.STATUS_UPDATING)) {
-            //MyPrefs.setPrefs(MainActivity.this, MenuActivity.UPDATE_DB, false);
+        if (updateStatus.equals(MenuActivity.STATUS_WILL_UPDATE)) {
+            MyPrefs.setPrefs(MainActivity.this, MenuActivity.UPDATE_STATUS, MenuActivity.STATUS_NOW_UPDATING);//!
             new MyTask().execute();
         }
     }
@@ -88,6 +81,7 @@ public class MainActivity extends FragmentActivity {
             super.onPreExecute();
             makeNotification("Загрузка началась", "Обновление базы началось");
             setProgressBarIndeterminateVisibility(true);
+            Log.d("MyTask", "Загрузка началась");
         }
 
         @Override
@@ -104,7 +98,7 @@ public class MainActivity extends FragmentActivity {
             super.onPostExecute(result);
             //добавить массив из sharedPrefs в editText
             //MyPrefs.setPrefs(MainActivity.this, MenuActivity.UPDATE_DB, false);
-
+            Log.d("MyTask", "Загрузка закончилась");
             MyPrefs.setPrefs(MainActivity.this, MenuActivity.UPDATE_STATUS, MenuActivity.STATUS_NOT_UPDATING);
 
 

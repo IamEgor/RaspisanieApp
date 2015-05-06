@@ -7,37 +7,23 @@
 
     <EditText
         
+        style="@style/EditTextStyle"
         android:id="@+id/editText_one"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
         android:layout_marginBottom="2dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/bg_input_normal"
-        android:ems="10"
-        android:padding="10dp" />
-
-    
-
-  
-
+         />
     <Button
+        
+        style="@style/ButtonShow" 
         android:id="@+id/button_show_rasp"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
         android:layout_below="@+id/editText_one"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
+        android:layout_centerHorizontal="true" 
         android:layout_marginTop="28dp"
-        android:background="@drawable/custom_button_center"
         android:text="@string/rasp"
-        android:textColor="#FFFFFF" />
+        />
 
     <LinearLayout
         android:paddingBottom="3dp"
-        
         android:paddingLeft="12dp"
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
@@ -51,7 +37,6 @@
        <TextView
             android:id="@+id/Nedavnie"
             style="@style/Nedavnie"
-            
             android:text="@string/nedavnie" />
     </LinearLayout>
 

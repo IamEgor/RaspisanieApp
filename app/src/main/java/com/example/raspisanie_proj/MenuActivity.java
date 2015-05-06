@@ -11,17 +11,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.lang.annotation.Target;
-
 import db.MyPrefs;
-import db.MySQLiteClass;
 
 /**
  * Created by Егор on 29.04.2015.
  */
 public class MenuActivity extends Activity {
     public static final String UPDATE_STATUS        =   "update";
-    public static final String STATUS_UPDATING      =   "updating";
+    public static final String STATUS_WILL_UPDATE   =   "will_update";
+    public static final String STATUS_NOW_UPDATING  =   "now_updating";
     public static final String STATUS_NOT_UPDATING  =   "not_updating";
     private boolean isUpdateBtnClicked;
     private Button button;
@@ -43,7 +41,7 @@ public class MenuActivity extends Activity {
                     button.setEnabled(!isUpdateBtnClicked);
                     textView.setText(R.string.updating_sentence);
 
-                    MyPrefs.setPrefs(MenuActivity.this, UPDATE_STATUS, STATUS_UPDATING);//!
+                    MyPrefs.setPrefs(MenuActivity.this, UPDATE_STATUS, STATUS_WILL_UPDATE);//!
                 }
                 else
                     Toast.makeText(MenuActivity.this, getResources().getString(R.string.no_connection), Toast.LENGTH_LONG).show();
@@ -63,7 +61,7 @@ public class MenuActivity extends Activity {
         String updateDate = MyPrefs.getStringPrefs(MenuActivity.this, MyPrefs.UPDATE_DATE);
         textView.append(updateDate);
         Log.d("UPDATE_STATUS", updateStatus);
-        if(updateStatus.equals(STATUS_UPDATING)){
+        if(updateStatus.equals(STATUS_WILL_UPDATE) || updateStatus.equals(STATUS_NOW_UPDATING)){
             textView.setText(R.string.updating_sentence);
             button.setEnabled(false);
         }

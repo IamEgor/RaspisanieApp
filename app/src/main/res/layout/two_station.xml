@@ -7,60 +7,35 @@
     android:orientation="vertical" >
 
     <AutoCompleteTextView
-      
         android:id="@+id/editText_from"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        style="@style/EditTextStyle"
         android:layout_marginBottom="2dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bg_input_normal"
-        android:ems="10"
-        android:padding="10dp" />
-    
+        android:layout_marginTop="20dp" />
 
     <AutoCompleteTextView
         android:id="@+id/editText_to"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        style="@style/EditTextStyle"
         android:layout_below="@id/editText_from"
         android:layout_marginBottom="4dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginTop="2dp"
-        android:background="@drawable/bg_input_normal"
-        android:ems="10"
-        android:padding="10dp" />
+        android:layout_marginTop="2dp" />
 
     <Button
         android:id="@+id/button_change"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        style="@style/ButtonChange"
         android:layout_alignParentRight="true"
         android:layout_below="@id/editText_from"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="-20dp"
-        android:alpha="1"
-        android:background="@drawable/custom_button_change" />
+        android:layout_marginTop="-20dp" />
 
     <Button
         android:id="@+id/button_show_rasp"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        style="@style/ButtonShow"
         android:layout_below="@+id/editText_to"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
         android:layout_marginTop="28dp"
-        android:background="@drawable/custom_button_center"
-        android:text="@string/rasp"
-        android:textColor="#FFFFFF" />
+        android:text="@string/rasp" />
 
     <LinearLayout
-        android:paddingBottom="3dp"
-        
-        android:paddingLeft="12dp"
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,16 +43,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="28dp"
         android:background="#000000"
-        android:gravity="center_vertical" >
+        android:gravity="center_vertical"
+        android:paddingBottom="3dp"
+        android:paddingLeft="12dp" >
 
-       <TextView
+        <TextView
             android:id="@+id/Nedavnie"
             style="@style/Nedavnie"
-            
             android:text="@string/nedavnie" />
-    </LinearLayout>  
-    
-     
+    </LinearLayout>
 
     <ListView
         android:id="@+id/MylistView"
@@ -85,11 +59,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/linearLayout1"
         android:layout_centerHorizontal="true" >
-
     </ListView>
-
-    
-
-
 
 </RelativeLayout>
