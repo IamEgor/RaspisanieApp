@@ -196,6 +196,8 @@
                 </string>
                 <string name="no_connection" >Нет интернет соединения 
                 </string>
+                <string name="nothing_to_show" >Между этими станициями нет сообщения, либо в названии допущена ошибка
+                </string>
                 <string name="nedavnie" >       недавние
                 </string>
                 <string name="numbers_pattern" >\d{1,2}
@@ -585,6 +587,11 @@ Sunday
                 path="C:\Users\Егор\Documents\Raspisanie1\app\src\main\res\menu\menu_toggle.xml"
                 qualifiers=""
                 type="menu" />
+            <file
+                name="empty_list"
+                path="C:\Users\Егор\Documents\Raspisanie1\app\src\main\res\layout\empty_list.xml"
+                qualifiers=""
+                type="layout" />
         </source>
         <source path="C:\Users\Егор\Documents\Raspisanie1\app\build\generated\res\rs\debug" />
         <source path="C:\Users\Егор\Documents\Raspisanie1\app\build\generated\res\generated\debug" />

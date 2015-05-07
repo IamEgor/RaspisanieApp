@@ -5,7 +5,7 @@
     android:background="#FFFFFF"
     android:orientation="vertical" >
 
-    <EditText
+    <AutoCompleteTextView
         
         style="@style/EditTextStyle"
         android:id="@+id/editText_one"

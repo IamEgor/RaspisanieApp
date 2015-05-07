@@ -83,6 +83,7 @@
     <string name="item4">Item4</string>
     <string name="nedavnie">       недавние</string>
     <string name="no_connection">Нет интернет соединения </string>
+    <string name="nothing_to_show">Между этими станициями нет сообщения, либо в названии допущена ошибка</string>
     <string name="numbers_pattern">\d{1,2}</string>
     <string name="prefix_get_station_name">Расписание поездов по станции/остановочному пункту </string>
     <string name="rasp">ПОКАЗАТЬ РАСПИСАНИЕ</string>

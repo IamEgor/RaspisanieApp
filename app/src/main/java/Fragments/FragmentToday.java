@@ -1,12 +1,11 @@
 package Fragments;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Calendar;
 
 import Adapters.ListViewRaspAdapter;
 import db.MyPrefs;
 import db.MySQLiteClass;
-
 
 
 import android.app.AlarmManager;
@@ -17,6 +16,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.TextView;
 import android.util.Log;
@@ -63,7 +63,6 @@ public class FragmentToday extends Fragment {
         mySQLiteClass.close();
 
 
-
         lv.setLongClickable(true);
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 
@@ -73,22 +72,40 @@ public class FragmentToday extends Fragment {
 
                 final View currentView = v;
 
-                Builder alertDialogBuilder = new AlertDialog.Builder(
-                        getActivity());
-                alertDialogBuilder.setTitle("Delete item");
-                alertDialogBuilder.setMessage("Are you sure?");
+                Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
+                final EditText edittext = new EditText(getActivity());
+                edittext.setHint("0-60 мин");
+                alertDialogBuilder.setTitle("НАПОМИНАЛОЧКА");
+                alertDialogBuilder.setMessage("ЗА СКОЛЬКО НАПОМНИТЬ?");
+
+                alertDialogBuilder.setView(edittext);
                 alertDialogBuilder.setPositiveButton("Yes",
                         new DialogInterface.OnClickListener() {
 
                             public void onClick(DialogInterface dialog, int id) {
 
-                                restartNotify();
-                                TextView Text = (TextView) currentView.findViewById(R.id.textViewComeOut);
-                                Toast.makeText(getActivity(),"long click : " + Text.getText(),Toast.LENGTH_LONG).show();
+                                String YouEditTextValue = edittext.getText().toString();
+                                TextView Text = (TextView) currentView.findViewById(R.id.textView_Out);
+
+                                int minute = getMinute(Text);
+                                int hour = getHour(Text);
+                                int edit = Integer.parseInt(YouEditTextValue);
+
+                                minute = minute - edit;
+
+                                if (minute < 0) {
+                                    hour = hour - 1;
+                                    minute = 60 + minute;
+                                }
+
+                                restartNotify(hour, minute, edit);
+
+                                Toast.makeText(getActivity(), "long click : " + hour + "  " + minute, Toast.LENGTH_LONG).show();
 
                             }
 
-                        });
+                        }
+                );
 
                 alertDialogBuilder.setNegativeButton("No",
                         new DialogInterface.OnClickListener() {
@@ -97,7 +114,8 @@ public class FragmentToday extends Fragment {
 
                             }
 
-                        });
+                        }
+                );
 
                 AlertDialog alertDialog = alertDialogBuilder.create();
                 alertDialog.show();
@@ -107,27 +125,76 @@ public class FragmentToday extends Fragment {
         });
 
 
+        if (list2.get(0).length == 1)///***
+        {
+            View empty_view = inflater.inflate(R.layout.empty_list, null, false);
 
+            TextView textViewMessage = (TextView) empty_view.findViewById(R.id.show_empty_set_tv);
+            textViewMessage.setText(getResources().getString(R.string.nothing_to_show));
 
-
-        ListViewRaspAdapter adapter = new ListViewRaspAdapter(getActivity(), rasp.getListRasp(list2));
-        lv.setAdapter(adapter);
-
+            view = empty_view;
+        } else {
+            ListViewRaspAdapter adapter = new ListViewRaspAdapter(getActivity(), rasp.getListRasp(list2));
+            lv.setAdapter(adapter);
+        }
         return view;
 
     }
 
 
-    private void restartNotify() {
+    private void restartNotify(int hour, int minute, int edit) {
 
-        Log.d("RESTART_NOTIFY","11111");
+        Log.d("RESTART_NOTIFY", "11111");
         AlarmManager am = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(getActivity(), NotificationReciever.class);
+        intent.putExtra("Edit", edit);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getActivity(),
                 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
 
-        am.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 4000,
-                pendingIntent);
+        Calendar calendar = Calendar.getInstance();
+        Calendar cal = Calendar.getInstance();
+
+        calendar.set(Calendar.YEAR, cal.get(Calendar.YEAR));
+        calendar.set(Calendar.MONTH, cal.get(Calendar.MONTH));
+        calendar.set(Calendar.DAY_OF_MONTH, cal.get(Calendar.DAY_OF_MONTH));
+        calendar.set(Calendar.HOUR_OF_DAY, hour);
+        calendar.set(Calendar.MINUTE, minute);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+
+        am.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+    }
+
+    private int getHour(TextView Text) {
+
+        String TimeView = (String) Text.getText();
+        int start = 0;
+        int end = 2;
+
+        char[] buf = new char[end - start];
+        TimeView.getChars(start, end, buf, 0);
+        String s = new String(buf);
+        int hour = Integer.parseInt(s);
+
+        return hour;
+    }
+
+    private int getMinute(TextView Text) {
+
+        String TimeView = (String) Text.getText();
+        int start = 0;
+        int end = 2;
+
+        int start_minute = 3;
+        int end_minute = 5;
+
+        char[] buf = new char[end - start];
+        TimeView.getChars(start_minute, end_minute, buf, 0);
+        String s1 = new String(buf);
+        int Minute = Integer.parseInt(s1);
+
+
+        return Minute;
     }
 
 }

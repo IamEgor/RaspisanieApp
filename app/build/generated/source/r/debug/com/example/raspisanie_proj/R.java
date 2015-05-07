@@ -48,40 +48,43 @@ public final class R {
         public static final int yellow=0x7f020013;
     }
     public static final class id {
-        public static final int MylistView=0x7f0a0007;
-        public static final int Nedavnie=0x7f0a000f;
-        public static final int Relative=0x7f0a0010;
-        public static final int TextViewOne=0x7f0a0001;
-        public static final int TextView_LastUpdate=0x7f0a000a;
-        public static final int ToggleButton_star=0x7f0a0000;
-        public static final int button_change=0x7f0a0013;
-        public static final int button_show_rasp=0x7f0a000d;
-        public static final int button_update=0x7f0a000b;
-        public static final int editText_from=0x7f0a0011;
-        public static final int editText_one=0x7f0a000c;
-        public static final int editText_to=0x7f0a0012;
-        public static final int imageView1=0x7f0a0003;
-        public static final int item2=0x7f0a0014;
-        public static final int linearLayout1=0x7f0a000e;
-        public static final int pagerTabStrip=0x7f0a0009;
-        public static final int star=0x7f0a0015;
-        public static final int textViewComeOut=0x7f0a0006;
-        public static final int textView_In=0x7f0a0005;
-        public static final int textView_Out=0x7f0a0002;
-        public static final int textView_long=0x7f0a0004;
-        public static final int viewPager=0x7f0a0008;
+        public static final int Line1=0x7f0a0004;
+        public static final int MylistView=0x7f0a0009;
+        public static final int Nedavnie=0x7f0a0011;
+        public static final int Relative=0x7f0a0012;
+        public static final int TextViewOne=0x7f0a0002;
+        public static final int TextView_LastUpdate=0x7f0a000c;
+        public static final int ToggleButton_star=0x7f0a0001;
+        public static final int button_change=0x7f0a0015;
+        public static final int button_show_rasp=0x7f0a000f;
+        public static final int button_update=0x7f0a000d;
+        public static final int editText_from=0x7f0a0013;
+        public static final int editText_one=0x7f0a000e;
+        public static final int editText_to=0x7f0a0014;
+        public static final int imageView1=0x7f0a0005;
+        public static final int item2=0x7f0a0016;
+        public static final int linearLayout1=0x7f0a0010;
+        public static final int pagerTabStrip=0x7f0a000b;
+        public static final int show_empty_set_tv=0x7f0a0000;
+        public static final int star=0x7f0a0017;
+        public static final int textViewComeOut=0x7f0a0008;
+        public static final int textView_In=0x7f0a0007;
+        public static final int textView_Out=0x7f0a0003;
+        public static final int textView_long=0x7f0a0006;
+        public static final int viewPager=0x7f0a000a;
     }
     public static final class layout {
-        public static final int list_item_nedavnie=0x7f030000;
-        public static final int list_item_rasp=0x7f030001;
-        public static final int list_nedavnie=0x7f030002;
-        public static final int list_today=0x7f030003;
-        public static final int list_tomorrow=0x7f030004;
-        public static final int main=0x7f030005;
-        public static final int main_rasp=0x7f030006;
-        public static final int menu_activity=0x7f030007;
-        public static final int one_station=0x7f030008;
-        public static final int two_station=0x7f030009;
+        public static final int empty_list=0x7f030000;
+        public static final int list_item_nedavnie=0x7f030001;
+        public static final int list_item_rasp=0x7f030002;
+        public static final int list_nedavnie=0x7f030003;
+        public static final int list_today=0x7f030004;
+        public static final int list_tomorrow=0x7f030005;
+        public static final int main=0x7f030006;
+        public static final int main_rasp=0x7f030007;
+        public static final int menu_activity=0x7f030008;
+        public static final int one_station=0x7f030009;
+        public static final int two_station=0x7f03000a;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -102,12 +105,13 @@ public final class R {
         public static final int item4=0x7f07000a;
         public static final int nedavnie=0x7f07000b;
         public static final int no_connection=0x7f07000c;
-        public static final int numbers_pattern=0x7f07000d;
-        public static final int prefix_get_station_name=0x7f07000e;
-        public static final int rasp=0x7f07000f;
-        public static final int today=0x7f070010;
-        public static final int update_sentence=0x7f070011;
-        public static final int updating_sentence=0x7f070012;
+        public static final int nothing_to_show=0x7f07000d;
+        public static final int numbers_pattern=0x7f07000e;
+        public static final int prefix_get_station_name=0x7f07000f;
+        public static final int rasp=0x7f070010;
+        public static final int today=0x7f070011;
+        public static final int update_sentence=0x7f070012;
+        public static final int updating_sentence=0x7f070013;
     }
     public static final class style {
         /** 

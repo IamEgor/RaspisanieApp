@@ -112,6 +112,7 @@ public class MainActivity extends FragmentActivity {
             ArrayAdapter<String> adapter = new ArrayAdapter<String>((MainActivity.this), android.R.layout.simple_list_item_1, data);
             ((AutoCompleteTextView) findViewById(R.id.editText_from)).setAdapter(adapter);
             ((AutoCompleteTextView) findViewById(R.id.editText_to)).setAdapter(adapter);
+            ((AutoCompleteTextView) findViewById(R.id.editText_one)).setAdapter(adapter);///***
             Log.d("###", "setAdapters");
             ///#
 

@@ -7,11 +7,15 @@ import com.example.raspisanie_proj.R;
 import com.example.raspisanie_proj.rasp;
 
 import Adapters.ListViewNedavnieAdapter;
+import db.MyPrefs;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -20,8 +24,9 @@ public class FragmentOneStation extends Fragment {
 	
 	
 private static final String KEY ="FragmentHistory";
-	
-	public static Fragment newInstance(int pos){
+    private AutoCompleteTextView EditTextFrom;///***
+
+    public static Fragment newInstance(int pos){
 		FragmentOneStation fragment=new FragmentOneStation();
 		Bundle args = new Bundle();
 		args.putInt(KEY, pos);
@@ -40,9 +45,13 @@ private static final String KEY ="FragmentHistory";
  		ListViewNedavnieAdapter adapter = new ListViewNedavnieAdapter(this.getActivity(),init());
  		// ���������� ������� ������
  		lv.setAdapter(adapter);
- 		EditText EditTextFrom=(EditText)view.findViewById(R.id.editText_one);
- 		Button ButtonShowRasp=(Button)view.findViewById(R.id.button_show_rasp);
- 		
+ 		EditTextFrom=(AutoCompleteTextView)view.findViewById(R.id.editText_one);///***
+ 		Button ButtonShowRasp=(Button)view.findViewById(R.id.button_show_rasp);///***
+
+        String[] data = MyPrefs.getStringPrefs(getActivity(), MyPrefs.STATION_PREFS).split(","); ///***
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_list_item_1, data);///***
+        EditTextFrom.setAdapter(adapter1);///***
+
 		return view;
 
 }

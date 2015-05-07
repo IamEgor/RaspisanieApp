@@ -34,6 +34,7 @@ public class FragmentTwoStation extends Fragment {
     };
     ///
     private AutoCompleteTextView EditTextFrom, EditTextTo;
+    private Button ButtonShowRasp, ButtonChange;///***
 
     ///
     public static Fragment newInstance(int pos) {
@@ -57,8 +58,8 @@ public class FragmentTwoStation extends Fragment {
 
         EditTextFrom = (AutoCompleteTextView) view.findViewById(R.id.editText_from);
         EditTextTo = (AutoCompleteTextView) view.findViewById(R.id.editText_to);
-        Button ButtonChange = (Button) view.findViewById(R.id.button_change);
-        Button ButtonShowRasp = (Button) view.findViewById(R.id.button_show_rasp);
+        ButtonChange = (Button) view.findViewById(R.id.button_change);///***
+        ButtonShowRasp = (Button) view.findViewById(R.id.button_show_rasp);///***
         //final RelativeLayout Relative = (RelativeLayout) view.findViewById(R.id.Relative);
 
         ///#
@@ -87,11 +88,38 @@ public class FragmentTwoStation extends Fragment {
             }
         });
         */
+        ButtonChange.setOnClickListener(new View.OnClickListener() { ///***
+            @Override
+            public void onClick(View view) {
+                String temp = "";
+
+                temp = EditTextTo.getText().toString();
+                EditTextTo.setText(EditTextFrom.getText().toString());
+                EditTextFrom.setText(temp);
+
+                EditTextFrom.dismissDropDown();
+                EditTextTo.dismissDropDown();
+            }
+        });
+
         ButtonShowRasp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //MySQLiteClass.copyDb(getActivity().getApplicationContext());
+                if (EditTextFrom.getText().toString().equals(null) || ///***
+                        EditTextFrom.getText().toString().equals("") ||
+                        EditTextTo.getText().toString().equals(null) ||
+                        EditTextTo.getText().toString().equals("")) {
+                    return;
+                }
+                ////////
+                MySQLiteClass mySQLiteClass = new MySQLiteClass(getActivity().getApplicationContext());
 
+                mySQLiteClass.open(false);//Так сделанно потому, что я не знаю, почему на телефоне вылетает, а на эмуляторе нет
+                ArrayList<String[]> list2 = mySQLiteClass. getScheduleForOneStation("Борисов");
+                mySQLiteClass.close();
+                for(String[] strings : list2)
+                    Log.d("&&&", strings[0] + "_" + strings[1] + "_" + strings[2] + "_" + strings[3]);
+                //////////
                 Intent i = new Intent(getActivity(), RaspActivity.class);
                 i.putExtra(MyPrefs.STATION_FROM, EditTextFrom.getText().toString());
                 i.putExtra(MyPrefs.STATION_TO, EditTextTo.getText().toString());

@@ -22,11 +22,14 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Егор on 17.03.2015.
@@ -164,78 +167,117 @@ public class MySQLiteClass {
 
         //open(false);
 
+        ArrayList<String[]> strings = new ArrayList<String[]>();///***
+        try {///***
+            String set = "SELECT table_arrival.[" + station1 + "], table_departure.[" + station2 + "],\n" +
+                    "train_table.train_number, train_table.train_direction, train_table.train_days, train_table.train_query\n" +
+                    "FROM table_arrival, table_departure, train_table\n" +
+                    "WHERE table_arrival.sh_id = table_departure.sh_id \n" +
+                    "AND table_arrival.sh_id = train_table.tr_id\n" +
+                    "AND table_arrival.[" + station1 + "] NOT NULL\n" +
+                    "AND table_departure.[" + station2 + "] NOT NULL\n" +
+                    "AND time(table_arrival.[" + station1 + "]) < time(table_departure.[" + station2 + "])";
 
-        String set = "SELECT table_arrival.[" + station1 + "], table_departure.[" + station2 + "],\n" +
-                "train_table.train_number, train_table.train_direction, train_table.train_days, train_table.train_query\n" +
-                "FROM table_arrival, table_departure, train_table\n" +
-                "WHERE table_arrival.sh_id = table_departure.sh_id \n" +
-                "AND table_arrival.sh_id = train_table.tr_id\n" +
-                "AND table_arrival.[" + station1 + "] NOT NULL\n" +
-                "AND table_departure.[" + station2 + "] NOT NULL\n" +
-                "AND time(table_arrival.[" + station1 + "]) < time(table_departure.[" + station2 + "])";
+            //Log.d(LOG_TAG, set);///***
+            String arrival, departure, number, direction, days;///***
+            Cursor c = thisDataBase.rawQuery(set, null);
 
-        Log.d(LOG_TAG, set);
-        ArrayList<String[]> strings = new ArrayList<String[]>();
-        String id, arrival, departure, number, direction, days, query;
-        Cursor c = thisDataBase.rawQuery(set, null);
+            while (c.moveToNext()) {
+                departure = c.getString(c.getColumnIndex(station1));
+                arrival = c.getString(c.getColumnIndex(station2));
+                number = c.getString(c.getColumnIndex(TRAIN_NUMBER));
+                direction = c.getString(c.getColumnIndex(TRAIN_DIRECTION));
+                days = c.getString(c.getColumnIndex(TRAIN_DAYS));
+                strings.add(new String[]{departure, arrival, timeDifference(departure, arrival), number + direction, "\n" + days});
 
-        while (c.moveToNext()) {
-            //id = c.getString(c.getColumnIndex(TRAIN_ID));
-            departure   = c.getString(c.getColumnIndex(station1));
-            arrival     = c.getString(c.getColumnIndex(station2));
-            number      = c.getString(c.getColumnIndex(TRAIN_NUMBER));
-            direction   = c.getString(c.getColumnIndex(TRAIN_DIRECTION));
-            days        = c.getString(c.getColumnIndex(TRAIN_DAYS));
-            //Log.d(LOG_TAG, "____________");
-            strings.add(new String[]{departure, arrival, timeDifference(departure, arrival), number + direction, "\n" + days});
-
+            }
+            c.close();
+        }catch (SQLiteException e)
+        {
+            strings.add(new String[]{""});
         }
-        c.close();
 
         return strings;
     }
-
-    public ArrayList<String[]> getScheduleNow(String station1, String station2)
+    public ArrayList<String[]> getScheduleForOneStation(String station)///***
     {
 
         //open(false);
 
+        ArrayList<String[]> strings = new ArrayList<String[]>();///***
+        try {///***
+            String set = "SELECT D.[" + station + "] as departure,  A.[" + station + "] as arrival,\n" +
+                    "    T.train_number, T.train_direction, T.train_days, T.train_query\n" +
+                    "    FROM table_arrival A, table_departure D, train_table T\n" +
+                    "    WHERE D.sh_id = T.tr_id    \n" +
+                    "    AND D.sh_id = A.sh_id\n" +
+                    "    AND D.[" + station + "] NOT NULL";
 
-        String set = "SELECT table_arrival.[" + station1 + "], table_departure.[" + station2 + "],\n" +
-                "train_table.train_number, train_table.train_direction, train_table.train_days, train_table.train_query\n" +
-                "FROM table_arrival, table_departure, train_table\n" +
-                "WHERE table_arrival.sh_id = table_departure.sh_id \n" +
-                "AND table_arrival.sh_id = train_table.tr_id\n" +
-                "AND table_arrival.[" + station1 + "] NOT NULL\n" +
-                "AND table_departure.[" + station2 + "] NOT NULL\n" +
-                "AND time(table_arrival.[" + station1 + "]) < time(table_departure.[" + station2 + "])\n" +
-                "AND time(table_arrival.[" + station1 + "]) > time('NOW','localtime')";
+            String arrival, departure, number, direction, days;
+            Cursor c = thisDataBase.rawQuery(set, null);
 
-        Log.d(LOG_TAG, set);
-        ArrayList<String[]> strings = new ArrayList<String[]>();
-        String id, arrival, departure, number, direction, days, query;
-        Cursor c = thisDataBase.rawQuery(set, null);
-        Cursor innerCursor = null;
-        while (c.moveToNext()) {
-            //id = c.getString(c.getColumnIndex(TRAIN_ID));
-            departure   = c.getString(c.getColumnIndex(station1));
-            arrival     = c.getString(c.getColumnIndex(station2));
-            number      = c.getString(c.getColumnIndex(TRAIN_NUMBER));
-            direction   = c.getString(c.getColumnIndex(TRAIN_DIRECTION));
-            days        = c.getString(c.getColumnIndex(TRAIN_DAYS));
-            query       = c.getString(c.getColumnIndex(TRAIN_DAYS_SQL_QUERY));
-            //Log.d(LOG_TAG, "____________");
-            innerCursor = thisDataBase.rawQuery(SET_CHECK + query, null);
-            while (innerCursor.moveToNext()) {
-                strings.add(new String[]{departure, arrival, timeDifference(departure, arrival), number, direction});
-                //Log.d(LOG_TAG, arrival+" "+departure+" "+number+" "+direction+" "+days);
-                //Log.d(LOG_TAG, " | " + SET_CHECK + query);
-                //Log.d(LOG_TAG, "returned - " + innerCursor.getString(0));
+            while (c.moveToNext()) {
+                arrival = c.getString(c.getColumnIndex("arrival"));
+                departure = c.getString(c.getColumnIndex("departure"));
+                number = c.getString(c.getColumnIndex(TRAIN_NUMBER));
+                direction = c.getString(c.getColumnIndex(TRAIN_DIRECTION));
+                days = c.getString(c.getColumnIndex(TRAIN_DAYS));
+                strings.add(new String[]{departure, arrival, number + direction, days});
+
             }
-
+            c.close();
+        }catch (SQLiteException e)
+        {
+            strings.add(new String[]{""});
         }
-        c.close();
-        innerCursor.close();
+        return strings;
+    }
+    public ArrayList<String[]> getScheduleNow(String station1, String station2)
+    {
+
+        //open(false);
+        ArrayList<String[]> strings = new ArrayList<String[]>();///***
+        try {///***
+            String set = "SELECT table_arrival.[" + station1 + "], table_departure.[" + station2 + "],\n" +
+                    "train_table.train_number, train_table.train_direction, train_table.train_days, train_table.train_query\n" +
+                    "FROM table_arrival, table_departure, train_table\n" +
+                    "WHERE table_arrival.sh_id = table_departure.sh_id \n" +
+                    "AND table_arrival.sh_id = train_table.tr_id\n" +
+                    "AND table_arrival.[" + station1 + "] NOT NULL\n" +
+                    "AND table_departure.[" + station2 + "] NOT NULL\n" +
+                    "AND time(table_arrival.[" + station1 + "]) < time(table_departure.[" + station2 + "])\n" +
+                    "AND time(table_arrival.[" + station1 + "]) > time('NOW','localtime')";
+
+            //Log.d(LOG_TAG, set);///***
+
+            String id, arrival, departure, number, direction, days, query;
+            Cursor c = thisDataBase.rawQuery(set, null);
+            Cursor innerCursor = null;
+            while (c.moveToNext()) {
+                //id = c.getString(c.getColumnIndex(TRAIN_ID));
+                departure = c.getString(c.getColumnIndex(station1));
+                arrival = c.getString(c.getColumnIndex(station2));
+                number = c.getString(c.getColumnIndex(TRAIN_NUMBER));
+                direction = c.getString(c.getColumnIndex(TRAIN_DIRECTION));
+                days = c.getString(c.getColumnIndex(TRAIN_DAYS));
+                query = c.getString(c.getColumnIndex(TRAIN_DAYS_SQL_QUERY));
+                //Log.d(LOG_TAG, "____________");
+                innerCursor = thisDataBase.rawQuery(SET_CHECK + query, null);
+                while (innerCursor.moveToNext()) {
+                    strings.add(new String[]{departure, arrival, timeDifference(departure, arrival), number, direction});
+                    //Log.d(LOG_TAG, arrival+" "+departure+" "+number+" "+direction+" "+days);
+                    //Log.d(LOG_TAG, " | " + SET_CHECK + query);
+                    //Log.d(LOG_TAG, "returned - " + innerCursor.getString(0));
+                }
+
+            }
+            c.close();
+            innerCursor.close();
+        }
+        catch (SQLiteException e)
+        {
+            strings.add(new String[]{""});
+        }
         //close();
         //Log.d(LOG_TAG, String.valueOf((new Date())));
         return strings;
@@ -317,30 +359,24 @@ public class MySQLiteClass {
         thisDataBase.execSQL(DBHelp.CREATE_ARRIVAL_TABLE);
         thisDataBase.execSQL(DBHelp.CREATE_DEPARTURE_TABLE);
     }
-    public String timeDifference(String departure, String arrival) {
-        int numDepart, numArriv, temp;
-        String difference = "";
+    public String timeDifference(String departure, String arrival) {///***
 
-        numDepart   =   Integer.parseInt(departure.substring(0, 2));
-        numArriv    =   Integer.parseInt(arrival.substring(0, 2));
+        String hours, minutes;
 
-        if (numDepart > numArriv)
-            return "Something got wrong";
-
-        temp = numArriv - numDepart;
-
-
-        numDepart   =   Integer.parseInt(departure.substring(3, 5));
-        numArriv    =   Integer.parseInt(arrival.substring(3, 5));
-
-        if (numDepart > numArriv) {
-            temp--;
-            difference = String.valueOf(temp) + " ч : " + String.valueOf(numDepart - numArriv) + " мин";
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm");
+        Date date1 = null, date2 = null;
+        try {
+            date1 = format.parse(departure);
+            date2 = format.parse(arrival);
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
-        else
-            difference = String.valueOf(temp) + " ч : " + String.valueOf(numArriv - numDepart) + " мин";
 
-        return difference;
+        long difference = TimeUnit.MILLISECONDS.toMinutes(date2.getTime() - date1.getTime());
+        hours = String.valueOf(difference /60);
+        minutes = String.valueOf(difference%60);
+
+        return hours + " ч : " + minutes + " мин";
     }
 
     public static void copyDb(Context cont)

@@ -22,5 +22,6 @@
 
     <string name="UpdateRasp">Обновить расписание</string>
     <string name="LastUpdate">Последнее обновление</string>
+    <string name="nothing_to_show">Между этими станициями нет сообщения, либо в названии допущена ошибка</string>
 
 </resources>

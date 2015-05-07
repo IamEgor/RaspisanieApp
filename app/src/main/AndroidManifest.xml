@@ -42,7 +42,7 @@
             android:exported="true" >
         </service>
 
-        <reciever
+        <receiver
             android:name=".NotificationReciever"
           />
     </application>
