@@ -198,6 +198,10 @@
                 </string>
                 <string name="nothing_to_show" >Между этими станициями нет сообщения, либо в названии допущена ошибка
                 </string>
+                <string name="stop_station" >кон.
+                </string>
+                <string name="start_station" >нач.
+                </string>
                 <string name="nedavnie" >       недавние
                 </string>
                 <string name="numbers_pattern" >\d{1,2}

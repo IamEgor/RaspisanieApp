@@ -87,6 +87,8 @@
     <string name="numbers_pattern">\d{1,2}</string>
     <string name="prefix_get_station_name">Расписание поездов по станции/остановочному пункту </string>
     <string name="rasp">ПОКАЗАТЬ РАСПИСАНИЕ</string>
+    <string name="start_station">нач.</string>
+    <string name="stop_station">кон.</string>
     <string name="today">Сегодня</string>
     <string name="update_sentence">Последнее обновление : </string>
     <string name="updating_sentence">Обновление запущено</string>

@@ -109,9 +109,11 @@ public final class R {
         public static final int numbers_pattern=0x7f07000e;
         public static final int prefix_get_station_name=0x7f07000f;
         public static final int rasp=0x7f070010;
-        public static final int today=0x7f070011;
-        public static final int update_sentence=0x7f070012;
-        public static final int updating_sentence=0x7f070013;
+        public static final int start_station=0x7f070011;
+        public static final int stop_station=0x7f070012;
+        public static final int today=0x7f070013;
+        public static final int update_sentence=0x7f070014;
+        public static final int updating_sentence=0x7f070015;
     }
     public static final class style {
         /** 

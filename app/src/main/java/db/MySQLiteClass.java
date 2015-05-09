@@ -222,7 +222,14 @@ public class MySQLiteClass {
                 number = c.getString(c.getColumnIndex(TRAIN_NUMBER));
                 direction = c.getString(c.getColumnIndex(TRAIN_DIRECTION));
                 days = c.getString(c.getColumnIndex(TRAIN_DAYS));
-                strings.add(new String[]{departure, arrival, number + direction, days});
+
+                if(arrival.equals(""))
+                    arrival   = context.getString(R.string.start_station);
+
+                if(departure.equals(""))
+                    departure = context.getString(R.string.stop_station);
+
+                strings.add(new String[]{departure, arrival, number, direction, days});
 
             }
             c.close();

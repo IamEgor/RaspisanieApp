@@ -82,9 +82,11 @@ int string nothing_to_show 0x7f07000d
 int string numbers_pattern 0x7f07000e
 int string prefix_get_station_name 0x7f07000f
 int string rasp 0x7f070010
-int string today 0x7f070011
-int string update_sentence 0x7f070012
-int string updating_sentence 0x7f070013
+int string start_station 0x7f070011
+int string stop_station 0x7f070012
+int string today 0x7f070013
+int string update_sentence 0x7f070014
+int string updating_sentence 0x7f070015
 int style AppBaseTheme 0x7f080000
 int style AppTheme 0x7f080001
 int style ButtonChange 0x7f080002
