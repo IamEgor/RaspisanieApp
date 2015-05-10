@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical" >
+    
+    <TextView 
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:id="@+id/TextView_LastUpdate"
+    	android:text="@string/LastUpdate"
+    	android:textSize="15sp"
+    	android:layout_marginLeft="25dp"
+    	
+        />
+
+    <Button
+        
+        style="@style/ButtonShow" 
+        android:layout_below="@id/TextView_LastUpdate"
+        android:id="@+id/button_update"        
+        android:layout_marginTop="18dp"
+        android:layout_gravity="center_vertical"
+        android:text="@string/UpdateRasp"
+        />
+
+</RelativeLayout>

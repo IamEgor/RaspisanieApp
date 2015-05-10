@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="stations">
+        <item>http://www.rw.by/schedule/suburban/?stid=140304</item>
+        <item>http://www.rw.by/schedule/suburban/?stid=140314</item>
+        <item>http://www.rw.by/schedule/suburban/?stid=140418</item>
+        <item>http://www.rw.by/schedule/suburban/?stid=140403</item>
+        <item>http://www.rw.by/schedule/suburban/?stid=140704</item>
+        <item>http://www.rw.by/schedule/suburban/?stid=140808</item>
+        <item>http://www.rw.by/schedule/suburban/?stid=140812</item>
+        <item>http://www.rw.by/schedule/suburban/?stid=140901</item>
+        <item>http://www.rw.by/schedule/suburban/?stid=140916</item>
+        <item>http://www.rw.by/schedule/suburban/?stid=140935</item>
+        <item>http://www.rw.by/schedule/suburban/?stid=140920</item>
+        <item>http://www.rw.by/schedule/suburban/?stid=141001</item>
+        <item>http://www.rw.by/schedule/suburban/?stid=141228</item>
+        <item>http://www.rw.by/schedule/suburban/?stid=141209</item>
+        <item>http://www.rw.by/schedule/suburban/?stid=141336</item>
+        <item>http://www.rw.by/schedule/suburban/?stid=141213</item>
+        <item>http://www.rw.by/schedule/suburban/?stid=141302</item>
+        <item>http://www.rw.by/schedule/suburban/?stid=141317</item>
+        <item>http://www.rw.by/schedule/suburban/?stid=141321</item>
+        <item>http://www.rw.by/schedule/suburban/?stid=141406</item>
+
+    </string-array>
+
+    <string-array name="weekDaysUS">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+
+    <string-array name="weekDaysRU">
+        <item>пн</item>
+        <item>вт</item>
+        <item>ср</item>
+        <item>чт</item>
+        <item>пт</item>
+        <item>сб</item>
+        <item>вск</item>
+    </string-array>
+
+    <string-array name="extractExpressions">
+        <item>^(\\d{1,2}[\\,]*\\s){1,}(марта)</item>
+        <item>^(((пн|вт|ср|чт|пт|сб|вск)[\\,]*)+)</item>
+        <item>^(по выходным)</item>
+        <item>^(по будням)</item>
+    </string-array>
+
+</resources>

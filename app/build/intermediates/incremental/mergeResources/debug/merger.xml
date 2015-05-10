@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="21.0.0" >
+        <source path="C:\Users\Егор\Documents\RaspViewProj1\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\res" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res" >
+            <file
+                name="button"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable\button.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="button_pressed"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable\button_pressed.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="checkbox"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable\checkbox.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="checkboxselected"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable\checkboxselected.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="custom_button_center"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable\custom_button_center.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="custom_button_change"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable\custom_button_change.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="custom_checkbox"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable\custom_checkbox.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="ic_clocks"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable\ic_clocks.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="line_list_item"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable\line_list_item.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="parovoz"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable\parovoz.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="parovoz_small"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable\parovoz_small.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="bg_input_normal"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable-hdpi\bg_input_normal.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable-hdpi\ic_launcher.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_star_not_selected"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable-hdpi\ic_star_not_selected.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_star_selected"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable-hdpi\ic_star_selected.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="parovoz"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable-hdpi\parovoz.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="settings_icon"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable-hdpi\settings_icon.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="parovoz"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable-ldpi\parovoz.png"
+                qualifiers="ldpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable-mdpi\ic_launcher.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="parovoz"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable-mdpi\parovoz.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="settings_icon"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable-mdpi\settings_icon.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable-xhdpi\ic_launcher.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="parovoz"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable-xhdpi\parovoz.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="settings_icon"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\drawable-xhdpi\settings_icon.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="empty_list"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\layout\empty_list.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="list_item_nedavnie"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\layout\list_item_nedavnie.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="list_item_rasp"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\layout\list_item_rasp.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="list_nedavnie"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\layout\list_nedavnie.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="list_today"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\layout\list_today.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="list_tomorrow"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\layout\list_tomorrow.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="main"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\layout\main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="main_rasp"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\layout\main_rasp.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="menu_activity"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\layout\menu_activity.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="one_station"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\layout\one_station.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="two_station"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\layout\two_station.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="main"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\menu\main.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="menu2"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\menu\menu2.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="menu_toggle"
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\menu\menu_toggle.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\values\arrays.xml"
+                qualifiers="" >
+                <string-array name="weekDaysRU" >
+                    <item>
+пн
+                    </item>
+                    <item>
+вт
+                    </item>
+                    <item>
+ср
+                    </item>
+                    <item>
+чт
+                    </item>
+                    <item>
+пт
+                    </item>
+                    <item>
+сб
+                    </item>
+                    <item>
+вск
+                    </item>
+                </string-array>
+                <string-array name="stations" >
+                    <item>
+http://www.rw.by/schedule/suburban/?stid=140304
+                    </item>
+                    <item>
+http://www.rw.by/schedule/suburban/?stid=140314
+                    </item>
+                    <item>
+http://www.rw.by/schedule/suburban/?stid=140418
+                    </item>
+                    <item>
+http://www.rw.by/schedule/suburban/?stid=140403
+                    </item>
+                    <item>
+http://www.rw.by/schedule/suburban/?stid=140704
+                    </item>
+                    <item>
+http://www.rw.by/schedule/suburban/?stid=140808
+                    </item>
+                    <item>
+http://www.rw.by/schedule/suburban/?stid=140812
+                    </item>
+                    <item>
+http://www.rw.by/schedule/suburban/?stid=140901
+                    </item>
+                    <item>
+http://www.rw.by/schedule/suburban/?stid=140916
+                    </item>
+                    <item>
+http://www.rw.by/schedule/suburban/?stid=140935
+                    </item>
+                    <item>
+http://www.rw.by/schedule/suburban/?stid=140920
+                    </item>
+                    <item>
+http://www.rw.by/schedule/suburban/?stid=141001
+                    </item>
+                    <item>
+http://www.rw.by/schedule/suburban/?stid=141228
+                    </item>
+                    <item>
+http://www.rw.by/schedule/suburban/?stid=141209
+                    </item>
+                    <item>
+http://www.rw.by/schedule/suburban/?stid=141336
+                    </item>
+                    <item>
+http://www.rw.by/schedule/suburban/?stid=141213
+                    </item>
+                    <item>
+http://www.rw.by/schedule/suburban/?stid=141302
+                    </item>
+                    <item>
+http://www.rw.by/schedule/suburban/?stid=141317
+                    </item>
+                    <item>
+http://www.rw.by/schedule/suburban/?stid=141321
+                    </item>
+                    <item>
+http://www.rw.by/schedule/suburban/?stid=141406
+                    </item>
+                </string-array>
+                <string-array name="extractExpressions" >
+                    <item>
+^(\\d{1,2}[\\,]*\\s){1,}(марта)
+                    </item>
+                    <item>
+^(((пн|вт|ср|чт|пт|сб|вск)[\\,]*)+)
+                    </item>
+                    <item>
+^(по выходным)
+                    </item>
+                    <item>
+^(по будням)
+                    </item>
+                </string-array>
+                <string-array name="weekDaysUS" >
+                    <item>
+Monday
+                    </item>
+                    <item>
+Tuesday
+                    </item>
+                    <item>
+Wednesday
+                    </item>
+                    <item>
+Thursday
+                    </item>
+                    <item>
+Friday
+                    </item>
+                    <item>
+Saturday
+                    </item>
+                    <item>
+Sunday
+                    </item>
+                </string-array>
+            </file>
+            <file
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\values\colors.xml"
+                qualifiers="" >
+                <item
+                    name="blue"
+                    type="color">
+#0060b7
+                </item>
+
+                <integer-array name="androidcolors" >
+                    <item>
+@color/blue
+                    </item>
+                    <item>
+@color/dark_blue
+                    </item>
+                </integer-array>
+
+                <item
+                    name="dark_blue"
+                    type="color">
+#00396d
+                </item>
+            </file>
+            <file
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\values\dimens.xml"
+                qualifiers="" >
+                <dimen name="activity_vertical_margin" >16dp
+                </dimen>
+                <dimen name="activity_horizontal_margin" >16dp
+                </dimen>
+            </file>
+            <file
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\values\strings.xml"
+                qualifiers="" >
+                <string name="hello_world" >Hello world!
+                </string>
+                <string name="updating_sentence" >Обновление запущено
+                </string>
+                <string name="today" >Сегодня
+                </string>
+                <string name="prefix_get_station_name" >Расписание поездов по станции/остановочному пункту 
+                </string>
+                <string name="action_settings" >Settings
+                </string>
+                <string name="app_name" >RaspViewProj
+                </string>
+                <string name="item1" >Item1
+                </string>
+                <string name="item2" >Item2
+                </string>
+                <string name="item3" >Item3
+                </string>
+                <string name="everyday" >На все дни
+                </string>
+                <string name="item4" >Item4
+                </string>
+                <string name="update_sentence" >Последнее обновление : 
+                </string>
+                <string name="day_names_pattern" >(пн|вт|ср|чт|пт|сб|вск)+
+                </string>
+                <string name="LastUpdate" >Последнее обновление
+                </string>
+                <string name="no_connection" >Нет интернет соединения 
+                </string>
+                <string name="nothing_to_show" >На данный момент между этими станициями нет сообщения, либо в названии допущена ошибка
+                </string>
+                <string name="stop_station" >кон.
+                </string>
+                <string name="start_station" >нач.
+                </string>
+                <string name="nedavnie" >Закладки
+                </string>
+                <string name="numbers_pattern" >\d{1,2}
+                </string>
+                <string name="UpdateRasp" >Обновить расписание
+                </string>
+                <string name="rasp" >ПОКАЗАТЬ РАСПИСАНИЕ
+                </string>
+            </file>
+            <file
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\values\styles.xml"
+                qualifiers="" >
+
+                <style
+                    name="MyActionBar"
+                    parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse" >
+                    <item name="android:background">
+@color/blue
+                    </item>
+                </style>
+
+                <style
+                    name="AppTheme"
+                    parent="AppBaseTheme" >
+
+                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+                </style>
+
+                <style
+                    name="CustomActionBarTheme"
+                    parent="@android:style/Theme.Holo.Light.DarkActionBar" >
+                    <item name="android:actionBarStyle">
+@style/MyActionBar
+                    </item>
+                </style>
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Light" >
+
+                    <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+                    -->
+                </style>
+            </file>
+            <file
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\values\text_styles.xml"
+                qualifiers="" >
+
+                <style name="EditTextStyle" >
+                    <item name="android:layout_width">
+match_parent
+                    </item>
+                    <item name="android:layout_height">
+50dp
+                    </item>
+                    <item name="android:layout_marginLeft">
+32dp
+                    </item>
+                    <item name="android:layout_marginRight">
+32dp
+                    </item>
+                    <item name="android:ems">
+10
+                    </item>
+                    <item name="android:padding">
+10dp
+                    </item>
+                    <item name="android:background">
+@drawable/bg_input_normal
+                    </item>
+                </style>
+
+                <style name="ToggleButton" >
+                    <item name="android:layout_width">
+35dp
+                    </item>
+                    <item name="android:layout_height">
+35dp
+                    </item>
+                    <item name="android:scaleType">
+fitXY
+                    </item>
+                    <item name="android:textOff"/>
+                    <item name="android:textOn"/>
+                    <item name="android:focusable">
+false
+                    </item>
+                    <item name="android:layout_centerVertical">
+true
+                    </item>
+                    <item name="android:background">
+@drawable/custom_checkbox
+                    </item>
+                </style>
+
+                <style name="Nedavnie" >
+                    <item name="android:layout_width">
+wrap_content
+                    </item>
+                    <item name="android:layout_height">
+wrap_content
+                    </item>
+                    <item name="android:textColor">
+#FFFFFF
+                    </item>
+                    <item name="android:textSize">
+19sp
+                    </item>
+                </style>
+
+                <style name="TextViewListItemNed" >
+                    <item name="android:layout_width">
+match_parent
+                    </item>
+                    <item name="android:layout_height">
+wrap_content
+                    </item>
+                    <item name="android:layout_centerVertical">
+true
+                    </item>
+                    <item name="android:textAppearance">
+?android:attr/textAppearanceMedium
+                    </item>
+                    <item name="android:focusable">
+false
+                    </item>
+                </style>
+
+                <style name="StyleTabStrip" >
+                    <item name="android:layout_width">
+match_parent
+                    </item>
+                    <item name="android:layout_height">
+wrap_content
+                    </item>
+                    <item name="android:layout_gravity">
+top
+                    </item>
+                    <item name="android:textColor">
+#ffffffff
+                    </item>
+                    <item name="android:background">
+#ff000000
+                    </item>
+                </style>
+
+                <style name="ButtonChange" >
+                    <item name="android:layout_width">
+40dp
+                    </item>
+                    <item name="android:layout_height">
+40dp
+                    </item>
+                    <item name="android:alpha">
+1
+                    </item>
+                    <item name="android:background">
+@drawable/custom_button_change
+                    </item>
+                </style>
+
+                <style name="ButtonShow" >
+                    <item name="android:layout_width">
+match_parent
+                    </item>
+                    <item name="android:layout_height">
+50dp
+                    </item>
+                    <item name="android:layout_marginLeft">
+25dp
+                    </item>
+                    <item name="android:layout_marginRight">
+25dp
+                    </item>
+                    <item name="android:textColor">
+#ffffffff
+                    </item>
+                    <item name="android:background">
+@drawable/custom_button_center
+                    </item>
+                </style>
+            </file>
+            <file
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\values-v11\styles.xml"
+                qualifiers="v11" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light" >
+
+                    <!-- API 11 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\values-v14\styles.xml"
+                qualifiers="v14" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light.DarkActionBar" >
+
+                    <!-- API 14 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                path="C:\Users\Егор\Documents\RaspViewProj1\app\src\main\res\values-w820dp\dimens.xml"
+                qualifiers="w820dp-v13" >
+                <dimen name="activity_horizontal_margin" >64dp
+                </dimen>
+            </file>
+        </source>
+        <source path="C:\Users\Егор\Documents\RaspViewProj1\app\build\generated\res\rs\debug" />
+        <source path="C:\Users\Егор\Documents\RaspViewProj1\app\build\generated\res\generated\debug" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="C:\Users\Егор\Documents\RaspViewProj1\app\src\debug\res" />
+    </dataSet>
+
+</merger>

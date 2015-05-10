@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/dark_blue"
+          android:state_pressed="true" />
+    <item android:drawable="@color/dark_blue"
+          android:state_focused="true" />
+    <item android:drawable="@color/blue" />
+</selector>
+
+
+<!-- From: file:/C:/Users/Егор/Documents/RaspViewProj1/app/src/main/res/drawable/custom_button_center.xml -->

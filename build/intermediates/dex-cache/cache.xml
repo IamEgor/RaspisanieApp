@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="C:\Users\Егор\Documents\RaspViewProj1\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-41a66ab74c6e7823778400487b19735cf39aed07.jar"
+        jar="C:\Users\Егор\AppData\Local\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.0\support-annotations-21.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e"/>
+    <item
+        dex="C:\Users\Егор\Documents\RaspViewProj1\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.0-72617d090b004a7644c0a86f9a88b6dad4b4d433.jar"
+        jar="C:\Users\Егор\Documents\RaspViewProj1\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\libs\internal_impl-21.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0"/>
+    <item
+        dex="C:\Users\Егор\Documents\RaspViewProj1\app\build\intermediates\pre-dexed\debug\classes-b910313edef00d303e9208ad01df9a8b6bbbb6e4.jar"
+        jar="C:\Users\Егор\Documents\RaspViewProj1\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="686344a780033e4ba22b926cd225f8d4941247e6"/>
+    <item
+        dex="C:\Users\Егор\Documents\RaspViewProj1\app\build\intermediates\pre-dexed\debug\jsoup-1.8.1-d3541610022c37551b2bf48629fd5de488675507.jar"
+        jar="C:\Users\Егор\Documents\RaspViewProj1\app\libs\jsoup-1.8.1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="3d57e95c0f150b885ccdbda7a12bef353fd31d02"/>
+    <item
+        dex="C:\Users\Егор\Documents\RaspViewProj1\app\build\intermediates\pre-dexed\debug\acra-4.6.1-01dae616ebce48fc7e55d73054916cf32f8e82ad.jar"
+        jar="C:\Users\Егор\Documents\RaspViewProj1\app\libs\acra-4.6.1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="60a854db6e9445f56efc72bfb3da39f583eb6e89"/>
+
+</pre-dex-items>

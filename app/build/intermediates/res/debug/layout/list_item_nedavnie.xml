@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="50dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+  
+    <ToggleButton
+        
+        style="@style/ToggleButton"
+        android:id="@+id/ToggleButton_star"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"/>
+    
+       <TextView
+      
+        style="@style/TextViewListItemNed"
+        android:id="@+id/TextViewOne"
+        android:layout_toLeftOf="@id/ToggleButton_star"
+        android:layout_marginLeft="10dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+ />
+   
+</RelativeLayout><!-- From: file:/C:/Users/Егор/Documents/RaspViewProj1/app/src/main/res/layout/list_item_nedavnie.xml -->

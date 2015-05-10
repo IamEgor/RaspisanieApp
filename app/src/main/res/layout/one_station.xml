@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <AutoCompleteTextView
+        
+        style="@style/EditTextStyle"
+        android:id="@+id/editText_one"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="20dp"
+         />
+    <Button
+        
+        style="@style/ButtonShow" 
+        android:id="@+id/button_show_rasp"
+        android:layout_below="@+id/editText_one"
+        android:layout_centerHorizontal="true" 
+        android:layout_marginTop="28dp"
+        android:text="@string/rasp"
+        />
+
+    <LinearLayout
+        android:paddingBottom="3dp"
+        android:paddingLeft="12dp"
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_show_rasp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="84dp"
+        android:background="#000000"
+        android:gravity="center_vertical" >
+
+       <TextView
+            android:id="@+id/Nedavnie"
+            style="@style/Nedavnie"
+            android:text="@string/nedavnie" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/MylistView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_centerHorizontal="true" >
+
+    </ListView>
+
+</RelativeLayout>
