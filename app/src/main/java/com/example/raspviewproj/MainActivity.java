@@ -91,7 +91,7 @@ public class MainActivity extends FragmentActivity {
         protected Void doInBackground(Void... params) {
 
             MySQLiteClass mySQLiteClass = new MySQLiteClass(MainActivity.this);
-            mySQLiteClass.fillingTest(getResources());
+            mySQLiteClass.fillingDB(getResources());
 
             return null;
         }

@@ -223,7 +223,7 @@ public class MySQLiteClass {
                 if (departure.equals(""))
                     departure = context.getString(R.string.stop_station);
 
-                strings.add(new String[]{departure, arrival, number, direction, days});
+                strings.add(new String[]{departure, arrival, number, direction, "\n" + days});
 
             }
             c.close();
@@ -267,7 +267,7 @@ public class MySQLiteClass {
 
             }
             c.close();
-            if (innerCursor !=null)
+            if (innerCursor != null)
                 innerCursor.close();
         } catch (SQLiteException e) {
 
@@ -276,7 +276,7 @@ public class MySQLiteClass {
         return strings;
     }
 
-    public void fillingTest(Resources resources) {
+    public void fillingDB(Resources resources) {
 
         String[] stationURLs = resources.getStringArray(R.array.stations);
 

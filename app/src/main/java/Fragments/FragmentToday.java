@@ -12,8 +12,10 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -72,6 +74,7 @@ public class FragmentToday extends Fragment {
 
                 Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
                 final EditText edittext = new EditText(getActivity());
+                edittext.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_SIGNED);
                 edittext.setHint("0-60 минут");
                 alertDialogBuilder.setTitle("Напоминалочка");
                 alertDialogBuilder.setMessage("За сколько минут напомнить");

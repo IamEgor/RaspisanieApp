@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -101,7 +102,7 @@ public class FragmentTwoStation extends Fragment {
 
                 TextView textView = (TextView) v.findViewById(R.id.TextViewOne);
                 String text = textView.getText().toString();
-
+                Log.d("(((", text);
                 String delims = "[-]";
                 String[] tokens = text.split(delims);
                 Intent i = new Intent(getActivity(), RaspActivity.class);
@@ -141,11 +142,8 @@ public class FragmentTwoStation extends Fragment {
                 alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialog, int id) {
-
                         dialog.cancel();
-
                     }
-
                 });
 
                 AlertDialog alertDialog = alertDialogBuilder.create();

@@ -20,7 +20,7 @@ public class UpdatingService extends Service {
     public void onStart(Intent intent, int startId) {
         //MySQLiteClass mySQLiteClass = new MySQLiteClass(getApplicationContext());
 
-        //mySQLiteClass.fillingTest(getResources());
+        //mySQLiteClass.fillingDB(getResources());
     }
 
     @Override
