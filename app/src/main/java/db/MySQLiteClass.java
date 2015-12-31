@@ -2,7 +2,6 @@ package db;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -11,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Environment;
 import android.util.Log;
 
-import com.example.raspisanie_proj.R;
+import com.example.raspviewproj.R;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -21,6 +20,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.nio.channels.FileChannel;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -35,27 +35,22 @@ import java.util.concurrent.TimeUnit;
  * Created by Егор on 17.03.2015.
  */
 public class MySQLiteClass {
+    public static final String LOG_TAG = "MY_LOG_TAG";
+    public static final String STAT_PREFS = "station_prefs";
     private static final String DATABASE_NAME       =   "timetable_Db";
     private static final int    DATABASE_VERSION    =   1;
-
     private static final String SCHEDULE_TABLE_DEPARTURE = "table_departure";
     private static final String SCHEDULE_TABLE_ARRIVAL   = "table_arrival";
     private static final String SCHEDULE_ID              = "sh_id";
-
     private static final String TRAIN_TABLE             =   "train_table";
     private static final String TRAIN_ID                =   "tr_id";
     private static final String TRAIN_NUMBER            =   "train_number";
     private static final String TRAIN_DIRECTION         =   "train_direction";
     private static final String TRAIN_CLASS             =   "train_class";
+    //private static final String TRAIN_STOPS = "train_stops";
     private static final String TRAIN_DAYS              =   "train_days";
     private static final String TRAIN_DAYS_SQL_QUERY    =   "train_query";
-    //private static final String TRAIN_STOPS = "train_stops";
-
     private static final String SET_CHECK = "SELECT \"something\"";
-
-    public static final String LOG_TAG    = "MY_LOG_TAG";
-    public static final String STAT_PREFS = "station_prefs";
-
     private final Context context;
     private DBHelp dbhelp;
     private SQLiteDatabase thisDataBase;
@@ -66,6 +61,38 @@ public class MySQLiteClass {
         combinator = new ParsingCombinator();
     }
 
+    public static String getCurrentTime() {
+        Calendar calendar = new GregorianCalendar();
+        SimpleDateFormat dateFormat = new SimpleDateFormat(" dd MMMM в HH:mm:ss", new Locale("ru_RU"));
+        return dateFormat.format(calendar.getTime());
+    }
+
+    public static void copyDb(Context cont) {
+        try {
+            File sd = Environment.getExternalStorageDirectory();
+            File data = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+
+            if (sd.canWrite()) {
+                String packageName = cont.getPackageName();
+                String currentDBPath = "//data//" + packageName + "//databases//" + DATABASE_NAME + "";
+                String backupDBPath = DATABASE_NAME;
+                File currentDB = new File(data, currentDBPath);
+                File backupDB = new File(sd, backupDBPath);
+
+                if (currentDB.exists()) {
+                    FileChannel src = new FileInputStream(currentDB).getChannel();
+                    FileChannel dst = new FileOutputStream(backupDB).getChannel();
+                    dst.transferFrom(src, 0, src.size());
+                    src.close();
+                    dst.close();
+                }
+            }
+            Log.d("%%%", "coped");
+        } catch (Exception e) {
+            Log.d("%%%", "exception");
+            e.printStackTrace();
+        }
+    }
 
     public MySQLiteClass open(boolean writable) throws SQLiteException {
 
@@ -101,6 +128,7 @@ public class MySQLiteClass {
         //close();
         return currentRow;
     }
+
     private void addArrivalTimeUnsafe(int trainId, String columnName, String arrivalTime, String departureTime)
     {
         //open(true);
@@ -116,6 +144,7 @@ public class MySQLiteClass {
 
         //close();
     }
+
     private String getStationName(Document document, String prefix) {
         Elements stationNameElement = document.body().getElementsMatchingText(prefix);
         String messageText = stationNameElement.last().text();
@@ -125,9 +154,11 @@ public class MySQLiteClass {
     private String getTrainNumber(String stringWithNumber) {
         return stringWithNumber.substring(0, stringWithNumber.indexOf(" "));
     }
+
     private String getTrainDirection(String stringWithDirection) {
         return stringWithDirection.substring(stringWithDirection.indexOf(" ") + 1);
     }
+
     private int isTrainExistUnsafe(String tableName, String trainNum, String direct, String days) {
 
         Cursor c = thisDataBase.rawQuery(
@@ -148,6 +179,7 @@ public class MySQLiteClass {
     private void addColumnUnsafe(String tableName, String columnName) {
         thisDataBase.execSQL("ALTER TABLE " + tableName + " ADD COLUMN \"" + columnName + "\" TEXT");
     }
+
     private void dropTables() {
         open(true);
         thisDataBase.execSQL("DROP TABLE" + SCHEDULE_TABLE_ARRIVAL);
@@ -156,12 +188,6 @@ public class MySQLiteClass {
         close();
     }
 
-    public static String getCurrentTime()
-    {
-        Calendar calendar = new GregorianCalendar();
-        SimpleDateFormat dateFormat = new SimpleDateFormat(" dd MMMM в HH:mm:ss", new Locale("ru_RU"));
-        return dateFormat.format(calendar.getTime());
-    }
     public ArrayList<String[]> getScheduleEveryDay(String station1, String station2)
     {
 
@@ -194,11 +220,12 @@ public class MySQLiteClass {
             c.close();
         }catch (SQLiteException e)
         {
-            strings.add(new String[]{""});
+            //  strings.add(new String[]{""});
         }
 
         return strings;
     }
+
     public ArrayList<String[]> getScheduleForOneStation(String station)///***
     {
 
@@ -235,10 +262,11 @@ public class MySQLiteClass {
             c.close();
         }catch (SQLiteException e)
         {
-            strings.add(new String[]{""});
+            //   strings.add(new String[]{""});
         }
         return strings;
     }
+
     public ArrayList<String[]> getScheduleNow(String station1, String station2)
     {
 
@@ -279,75 +307,79 @@ public class MySQLiteClass {
 
             }
             c.close();
+            if (innerCursor != null)
+
             innerCursor.close();
         }
         catch (SQLiteException e)
         {
-            strings.add(new String[]{""});
+            //strings.add(new String[]{""});
         }
         //close();
         //Log.d(LOG_TAG, String.valueOf((new Date())));
         return strings;
     }
+
     public void fillingTest(Resources resources)
     {
-
-        String[] stationURLs = resources.getStringArray(R.array.stations);
         open(true);
+
+        String prefix = "http://rasp.rw.by/ru/station/?station=";
+        String postfix = "&date=everyday";
+        String[] stationNames = resources.getStringArray(R.array.stations);
+
+        System.setProperty("http.agent", "");
         resetDbUnsafe();
         ///////////////
         Log.d("downloading", "start");
-        ArrayList<String> prefsArray = new ArrayList<String>();
-        ArrayList<Document> documentsArray = new ArrayList<Document>();
-        Document documentTemp;
-        for (String currentStation : stationURLs) {
+
+        String encodedStationName;
+        Document webpageDocument = null;
+        Elements idElem, arrivalElem, departureElem, daysElem, directionElem, descriptionElem;
+
+        for (String currentStation : stationNames) {
             try {
-                documentTemp = Jsoup.connect(currentStation).get();
-                documentsArray.add(documentTemp);
+                encodedStationName = URLEncoder.encode(currentStation, "UTF-8");
+                webpageDocument = Jsoup.connect(prefix + encodedStationName + postfix).userAgent("IE/9.0").get();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        //Log.d("downloading", "finish");
+
+            idElem = webpageDocument.body().getElementsByClass("train_id");
+            arrivalElem = webpageDocument.body().getElementsByClass("train_start-time");
+            departureElem = webpageDocument.body().getElementsByClass("train_end-time");
+            daysElem = webpageDocument.body().getElementsByClass("train_halts");
+            directionElem = webpageDocument.body().getElementsByClass("train_text");
+            descriptionElem = webpageDocument.body().getElementsByClass("train_description");
 
 
-        Elements trainElem, arrivalElem, daysElem;
-        String stationName;
+            addColumnUnsafe(SCHEDULE_TABLE_ARRIVAL, currentStation);
+            addColumnUnsafe(SCHEDULE_TABLE_DEPARTURE, currentStation);
 
-        for(Document currentDocument : documentsArray)
-        {
-            trainElem = currentDocument.body().getElementsByClass("b-train");
-            arrivalElem = currentDocument.body().getElementsByClass("arrival");//только нечетн
-            daysElem = currentDocument.body().getElementsByClass("days-except");
-            daysElem.first();
-            stationName = getStationName(currentDocument, resources.getString(R.string.prefix_get_station_name));
+            for (int i = 0; i < idElem.size(); i++) {
 
-            addColumnUnsafe(SCHEDULE_TABLE_ARRIVAL, stationName);
-            addColumnUnsafe(SCHEDULE_TABLE_DEPARTURE, stationName);
+                String id = idElem.get(i).text();
+                String arrival = arrivalElem.get(i).text();
+                String departure = departureElem.get(i).text();
+                String days = daysElem.get(i).text();
+                String direction = directionElem.get(i).text();
+                String description = descriptionElem.get(i).text();
 
-            for (int i = 2; i < arrivalElem.size(); i += 2) {
-                String trainNumber = getTrainNumber(trainElem.get(i / 2 - 1).text());
-                //trainElem.get(i / 2 - 1).getElementsMatchingOwnText("\\d+\\W").text();
-                String direct = trainElem.get(i / 2 - 1).getElementsByTag("a").text();
-                String clazz = trainElem.get(i / 2 - 1).getElementsByTag("small").text();
-                String days = daysElem.get(i / 2 - 1).text();
-                String arrival = arrivalElem.get(i + 1).text();
-                String departure = arrivalElem.get(i).text();
+                if (!description.equals("Региональные линии эконом-класса"))
+                    continue;
 
-                int trainId = isTrainExistUnsafe(TRAIN_TABLE, trainNumber, direct, days);
+                int trainId = isTrainExistUnsafe(TRAIN_TABLE, id, direction, days);
 
                 if(trainId == -1) {
-                    trainId = addTrainUnsafe(trainNumber, direct, days, combinator.getFormedQuery(days));
-                    //Log.d("","addTrainUnsafe");
+                    trainId = addTrainUnsafe(id, direction, days, combinator.getFormedQuery(days));
                 }
-                addArrivalTimeUnsafe(trainId, stationName, arrival, departure);
+                addArrivalTimeUnsafe(trainId, currentStation, arrival, departure);
 
             }
-            prefsArray.add(stationName);
         }
-        ////
+
         StringBuilder sb = new StringBuilder();
-        for (String s : prefsArray) {
+        for (String s : stationNames) {
             sb.append(s).append(",");
         }
 
@@ -356,6 +388,7 @@ public class MySQLiteClass {
         close();
         Log.d("downloading","finally finished");
     }
+
     private void resetDbUnsafe()
     {
         thisDataBase.execSQL("DROP TABLE IF EXISTS " + SCHEDULE_TABLE_ARRIVAL);
@@ -366,6 +399,7 @@ public class MySQLiteClass {
         thisDataBase.execSQL(DBHelp.CREATE_ARRIVAL_TABLE);
         thisDataBase.execSQL(DBHelp.CREATE_DEPARTURE_TABLE);
     }
+
     public String timeDifference(String departure, String arrival) {///***
 
         String hours, minutes;
@@ -384,34 +418,6 @@ public class MySQLiteClass {
         minutes = String.valueOf(difference%60);
 
         return hours + " ч : " + minutes + " мин";
-    }
-
-    public static void copyDb(Context cont)
-    {
-        try {
-            File sd = Environment.getExternalStorageDirectory();
-            File data = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-
-            if (sd.canWrite()) {
-                String packageName = cont.getPackageName();
-                String currentDBPath = "//data//"+packageName+"//databases//"+DATABASE_NAME+"";
-                String backupDBPath = DATABASE_NAME;
-                File currentDB = new File(data, currentDBPath);
-                File backupDB = new File(sd, backupDBPath);
-
-                if (currentDB.exists()) {
-                    FileChannel src = new FileInputStream(currentDB).getChannel();
-                    FileChannel dst = new FileOutputStream(backupDB).getChannel();
-                    dst.transferFrom(src, 0, src.size());
-                    src.close();
-                    dst.close();
-                }
-            }
-            Log.d("%%%", "coped");
-        } catch (Exception e) {
-            Log.d("%%%", "exception");
-            e.printStackTrace();
-        }
     }
 
     private class DBHelp extends SQLiteOpenHelper {

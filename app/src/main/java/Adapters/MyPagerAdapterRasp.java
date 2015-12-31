@@ -1,11 +1,11 @@
 package Adapters;
 
-import Fragments.FragmentToday;
-import Fragments.FragmentTomorrow;
-import Fragments.FragmentTwoStation;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import Fragments.FragmentToday;
+import Fragments.FragmentTomorrow;
 
 public class MyPagerAdapterRasp  extends FragmentPagerAdapter {
 	  private final String Title[] = new String[] {"Сегодня","На все дни"};

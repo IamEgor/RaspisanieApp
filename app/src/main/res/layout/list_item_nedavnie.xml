@@ -5,22 +5,16 @@
     android:gravity="center_vertical"
     android:orientation="horizontal" >
 
-  
-    <ToggleButton
-        
-        style="@style/ToggleButton"
-        android:id="@+id/ToggleButton_star"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"/>
-    
+
        <TextView
       
-        style="@style/TextViewListItemNed"
         android:id="@+id/TextViewOne"
-        android:layout_toLeftOf="@id/ToggleButton_star"
+           style="@style/TextViewListItemNed"
         android:layout_marginLeft="10dp"
-        android:maxLines="1"
+           android:layout_marginRight="10dp"
         android:ellipsize="end"
+           android:gravity="left"
+           android:maxLines="1"
  />
    
 </RelativeLayout>

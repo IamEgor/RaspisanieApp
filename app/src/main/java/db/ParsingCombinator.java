@@ -12,29 +12,28 @@ import java.util.regex.Pattern;
 
 /**
  * Created by Егор on 22.04.2015.
- * добавить StringBuilder
  */
 
 public class ParsingCombinator {
     public static final String[] zzz = new String[] {
-            "^(\\d{1,2}\\W*\\s)+(###)",
-            "^(((пн|вт|ср|чт|пт|сб|вск)\\W*)+)",
+            "^(\\d{2}\\.\\d{2}(\\,\\s)?)+",
+            "(по\\s)?((пн|вт|ср|чт|пт|сб|вс)\\,?\\s?)+",
             "^(по выходным)",
-            "^(по будням)" };
+            "^(по будням)",
+            "^(по нечетным)",
+            "^(по четным)"};
     public static final String []ttt = new String[] {
             "(с)\\s\\d{1,2}\\s(###)",
             "(по)\\s\\d{1,2}\\s(###)",
-            "(кроме)[\\s\\d{1,2}\\W\\s]+(###)",
-            "(кроме)\\s((пн|вт|ср|чт|пт|сб|вск)\\W*)+"};
+            "(кроме)(\\s\\d{2}\\.\\d{2}\\,?)+",
+            "(кроме)\\s((пн|вт|ср|чт|пт|сб|вс)\\W*)+"};
+    private static final String dateCol = "'NOW'";//"date('NOW' ,'localtime')";
+    private static String currentMonthName;
+    private static String currentMonthNum;
     private HashMap<String, String> map;
     private String inputString;
     private String queryString;
     private int currentYear;
-    private static String currentMonthName;
-    //private static String nextMonthName;
-    private static String currentMonthNum;
-    //private static String nextMonthNum;
-    private static final String dateCol = "'NOW'";//"date('NOW' ,'localtime')";
     private ArrayList<String[]> listv;
     public ParsingCombinator() {
         inputString = "";
@@ -46,13 +45,13 @@ public class ParsingCombinator {
         currentYear = cal.get(Calendar.YEAR);
 
         map = new HashMap<String, String>() {{
-            put("пн" ,"1");
-            put("вт" ,"2");
-            put("ср" ,"3");
-            put("чт" ,"4");
-            put("пт" ,"5");
-            put("сб" ,"6");
-            put("вск","0");
+            put("пн", "1");
+            put("вт", "2");
+            put("ср", "3");
+            put("чт", "4");
+            put("пт", "5");
+            put("сб", "6");
+            put("вс", "0");
         }};
 
         Calendar calendar = new GregorianCalendar(new Locale("ru_RU"));
@@ -65,9 +64,7 @@ public class ParsingCombinator {
         currentMonthName = dateFormat.format(calendar.getTime());
 
         calendar.add(Calendar.MONTH, 1);
-        //nextMonthName = dateFormat.format(calendar.getTime());
         dateFormat = new SimpleDateFormat("MM");
-        //nextMonthNum = dateFormat.format(calendar.getTime());
 
 
         listv = new MyArrayList<String[]>(zzz.length * 2);
@@ -75,19 +72,15 @@ public class ParsingCombinator {
         for (String iterable_element : zzz) {
             if(iterable_element.contains("###"))
             {
-                //listv.add(new String[]{iterable_element.replace("###", currentMonthName),
-                //    iterable_element.replace("###", currentMonthName) + ".*"});
 
                 listv.add(new String[]{iterable_element.replace("###", currentMonthName),
-                    iterable_element.replace("###", currentMonthName) + ".*"});
+                        iterable_element.replace("###", currentMonthName) + ".*"});
             }
             else
                 listv.add(new String[]{iterable_element, iterable_element + ".*"});
         }
         for (String iterable_element : ttt) {
             if(iterable_element.contains("###")) {
-                //listv.add(new String[]{iterable_element.replace("###", currentMonthName),
-                //        ".*" + iterable_element.replace("###", currentMonthName) + ".*"});
                 listv.add(new String[]{iterable_element.replace("###", currentMonthName),
                         ".*" + iterable_element.replace("###", currentMonthName) + ".*"});
             }
@@ -169,122 +162,125 @@ public class ParsingCombinator {
     }
     /////////////////////////
     private void getGeneralizedSQL(String partString, String regExpr, int param) {
-		/*
-		Pattern p;
-		if(param != 2 || param != 3)
-		{
-			if(param == 2 || param == 7)
-				p = Pattern.compile("(пн|вт|ср|чт|пт|сб|вск)+");
-			else
-				p = Pattern.compile("\\d{1,2}");
-			Matcher m = p.matcher(partString);
-		}
-		*/
-        String s = "";
-        Pattern p;
-        Matcher m;
+
+        String formedString = "";
+        Pattern patterm;
+        Matcher mather;
+        String[] dayAndMounth;
         switch (param) {
-            case 0:
-                p = Pattern.compile("\\d{1,2}");
-                m = p.matcher(partString);
-                while (m.find()) {
-                    if (s.equals("")) {
-                        s = "(" + dateCol + " = \"" + currentYear + "-" + currentMonthNum + "-" + m.group() + "\"";
+            case 0: //getDateSQL
+                patterm = Pattern.compile("\\d{2}\\.\\d{2}");
+                mather = patterm.matcher(partString);
+                while (mather.find()) {
+                    dayAndMounth = mather.group().split("\\.");
+                    if (formedString.equals("")) {
+                        formedString = "(" + dateCol + " = \"" + currentYear + "-" + dayAndMounth[1] + "-" + dayAndMounth[0] + "\"";
                     } else {
-                        s += " OR " + dateCol + " = \"" + currentYear + "-" + currentMonthNum + "-" + m.group() + "\"";
+                        formedString += " OR " + dateCol + " = \"" + currentYear + "-" + dayAndMounth[1] + "-" + dayAndMounth[0] + "\"";
                     }
                 }
-                s += ") ";
-
+                formedString += ") ";
                 break;
-            case 1:
 
-                p = Pattern.compile("(пн|вт|ср|чт|пт|сб|вск)+");
-                m = p.matcher(partString);
-                while (m.find()) {
-                    if (s.equals("")) {
-                        s = "(" + "strftime('%w', " + dateCol + ") = \"" + map.get(m.group()) + "\"";
+            case 1: //getWeekdaySQL
+                patterm = Pattern.compile("(пн|вт|ср|чт|пт|сб|вс)+");
+                mather = patterm.matcher(partString);
+                while (mather.find()) {
+                    if (formedString.equals("")) {
+                        formedString = "(" + "strftime('%w', " + dateCol + ") = \"" + map.get(mather.group()) + "\"";
                     } else {
-                        s += " OR strftime('%w', " + dateCol + ") = \"" + map.get(m.group()) + "\"";
+                        formedString += " OR strftime('%w', " + dateCol + ") = \"" + map.get(mather.group()) + "\"";
                     }
                 }
-                s += ")";
+                formedString += ")";
+                break;
 
+            case 2: //getWeekendsSQL
+                formedString = "(strftime('%w', " + dateCol + ") = \"0\" OR strftime('%w', " + dateCol + ") = \"6\") ";
                 break;
-            case 2:
-                s = "(strftime('%w', " + dateCol + ") = \"0\" OR strftime('%w', " + dateCol + ") = \"6\") ";
+
+            case 3: //getWorkdaysSQL
+                formedString = "(strftime('%w', " + dateCol + ") != \"0\" AND strftime('%w', " + dateCol + ") != \"6\") ";
                 break;
-            case 3:
-                s = "(strftime('%w', " + dateCol + ") != \"0\" AND strftime('%w', " + dateCol + ") != \"6\") ";
+
+            case 4: //getOddDaysSQL
+                formedString = "(strftime('%d', " + dateCol + ")%2=1) ";
                 break;
-            case 4: //getAfterDateSQL
+
+            case 5: //getEvenDaysSQL
+                formedString = "(strftime('%d', " + dateCol + ")%2=0) ";
+                break;
+
+            case 6: //getAfterDateSQL
                 Pattern p3 = Pattern.compile("\\d{1,2}");
+                //patterm = Pattern.compile("\\d{2}\\.\\d{2}");
                 Matcher m3 = p3.matcher(partString);
                 while (m3.find()) {
-                    s = "(" + dateCol + " >= \"2015-" + currentMonthNum + "-" + m3.group() + "\")";
+                    formedString = "(" + dateCol + " >= \"" + currentYear + "-" + currentMonthNum + "-" + m3.group() + "\")";
+                    //dayAndMounth = mather.group().split("\\.");
+                    //formedString = "(" + dateCol + " >= \""+ currentYear + "-" + dayAndMounth[1] + "-" + dayAndMounth[0] + "\")";
                 }
                 break;
-            case 5: //getBeforeDateSQL
-                p = Pattern.compile("\\d{1,2}");
-                m = p.matcher(partString);
-                while (m.find()) {
-                    s = "(" + dateCol + " <= \"2015-" + currentMonthNum + "-" + m.group() + "\")";
+
+            case 7: //getBeforeDateSQL
+                patterm = Pattern.compile("\\d{1,2}");
+                //patterm = Pattern.compile("\\d{2}\\.\\d{2}");
+                mather = patterm.matcher(partString);
+                while (mather.find()) {
+                    formedString = "(" + dateCol + " <= \"" + currentYear + "-" + currentMonthNum + "-" + mather.group() + "\")";
+                    //dayAndMounth = mather.group().split("\\.");
+                    //formedString = "(" + dateCol + " <= \"" + currentYear + "-" + dayAndMounth[1] + "-" + dayAndMounth[0] + "\")";
                 }
 
                 break;
-            case 6: //getExceptDateSQL
-                p = Pattern.compile("\\d{1,2}");
-                m = p.matcher(partString);
-                while (m.find()) {
-                    if(s.equals(""))
-                    {
-                        s = "(" + dateCol + " != ";
-                        s += "\"2015-" + currentMonthNum + "-" + m.group() + "\"";
-                    }
-                    else
-                    {
-                        s += " AND " + dateCol + " != \"2015-" + currentMonthNum + "-" + m.group() + "\"";
-                    }
-                }
-                s += ")";
-                break;
-            case 7: //getExceptWeekDaySQL
 
-                p = Pattern.compile("(пн|вт|ср|чт|пт|сб|вск)+");
-                m = p.matcher(partString);
-                while (m.find()) {
-                    if(s.equals(""))
+            case 8: //getExceptDateSQL
+                patterm = Pattern.compile("\\d{2}\\.\\d{2}");
+                mather = patterm.matcher(partString);
+                while (mather.find()) {
+                    dayAndMounth = mather.group().split("\\.");
+                    if (formedString.equals(""))
                     {
-                        s = "(" + "strftime('%w', " + dateCol + ") != \"" + map.get(m.group()) + "\"";
+                        formedString = "(" + dateCol + " != ";
+                        formedString += "\"" + currentYear + "-" + dayAndMounth[1] + "-" + dayAndMounth[0] + "\"";
                     }
                     else
                     {
-                        s += " AND strftime('%w', " + dateCol + ") != \"" + map.get(m.group()) + "\"";
+                        formedString += " AND " + dateCol + " != \"" + currentYear + "-" + dayAndMounth[1] + "-" + dayAndMounth[0] + "\"";
                     }
                 }
-                s += ")";
+                formedString += ")";
+                break;
+
+            case 9: //getExceptWeekDaySQL
+
+                patterm = Pattern.compile("(пн|вт|ср|чт|пт|сб|вс)+");
+                mather = patterm.matcher(partString);
+                while (mather.find()) {
+                    if (formedString.equals(""))
+                    {
+                        formedString = "(" + "strftime('%w', " + dateCol + ") != \"" + map.get(mather.group()) + "\"";
+                    }
+                    else
+                    {
+                        formedString += " AND strftime('%w', " + dateCol + ") != \"" + map.get(mather.group()) + "\"";
+                    }
+                }
+                formedString += ")";
                 break;
 
             default:
-                s = "(date('NOW') = date('1990.01.01'))";
+                formedString = "(date('NOW') = date('1990.01.01'))";
                 break;
         }
 
         if(isQueryStringEmpty())
-            s = " WHERE " + s;
+            formedString = " WHERE " + formedString;
         else
-            s = " AND " + s;
+            formedString = " AND " + formedString;
 
-        appendQueryString(s);
+        appendQueryString(formedString);
         removePart(regExpr);
-    }
-    // ////////////////////////////////////////////////
-    public static class SingletonHolder {
-        public static final ParsingCombinator HOLDER_INSTANCE = new ParsingCombinator();
-    }
-
-    public static ParsingCombinator getInstance() {
-        return SingletonHolder.HOLDER_INSTANCE;
     }
 
 }

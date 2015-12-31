@@ -1,39 +1,67 @@
 package Adapters;
 
-import Fragments.FragmentHistory;
-import Fragments.FragmentOneStation;
-import Fragments.FragmentTwoStation;
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.view.ViewGroup;
 
-public class MyPagerAdapter extends FragmentPagerAdapter {
-	 
-	 private String Title[]= new String[] {"История","По маршруту","По станции"};
+import Fragments.FragmentOneStation;
+import Fragments.FragmentTwoStation;
+
+public class MyPagerAdapter extends FragmentStatePagerAdapter {
+
+
+    private String Title[] = new String[]{"На все дни", "На завтра"};
 
        public MyPagerAdapter(FragmentManager fm) {
            super(fm);
        }
 
-       @Override
+
+    @Override
+    public void destroyItem(ViewGroup container, int position, Object object) {
+
+        super.destroyItem(container, position, object);
+
+    }
+
+    @Override
        public Fragment getItem(int pos) {
            switch(pos) {
 
-           case 0: return FragmentHistory.newInstance(1);
-           case 1: return FragmentTwoStation.newInstance(2);
-           case 2: return FragmentOneStation.newInstance(3);
-           
-           default: return FragmentTwoStation.newInstance(2);
+               case 0:
+                   return FragmentTwoStation.newInstance(1);
+               case 1:
+                   return FragmentOneStation.newInstance(2);
+
+               default:
+                   return FragmentTwoStation.newInstance(1);
            }
        }
        
        @Override
        public int getCount() {
-           return 3;
+           return 2;
        }   
        
        @Override
    	public CharSequence getPageTitle(int position) {
-   		return Title[position];
+
+
+           return Title[position];
    	}
-   }
+
+    @Override
+    public Parcelable saveState() {
+        return null;
+    }
+
+    public int getItemPosition(Object object) {
+
+
+        return POSITION_NONE;
+    }
+
+}
+   

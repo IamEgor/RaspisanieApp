@@ -1,27 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="stations">
-        <item>http://www.rw.by/schedule/suburban/?stid=140304</item>
-        <item>http://www.rw.by/schedule/suburban/?stid=140314</item>
-        <item>http://www.rw.by/schedule/suburban/?stid=140418</item>
-        <item>http://www.rw.by/schedule/suburban/?stid=140403</item>
-        <item>http://www.rw.by/schedule/suburban/?stid=140704</item>
-        <item>http://www.rw.by/schedule/suburban/?stid=140808</item>
-        <item>http://www.rw.by/schedule/suburban/?stid=140812</item>
-        <item>http://www.rw.by/schedule/suburban/?stid=140901</item>
-        <item>http://www.rw.by/schedule/suburban/?stid=140916</item>
-        <item>http://www.rw.by/schedule/suburban/?stid=140935</item>
-        <item>http://www.rw.by/schedule/suburban/?stid=140920</item>
-        <item>http://www.rw.by/schedule/suburban/?stid=141001</item>
-        <item>http://www.rw.by/schedule/suburban/?stid=141228</item>
-        <item>http://www.rw.by/schedule/suburban/?stid=141209</item>
-        <item>http://www.rw.by/schedule/suburban/?stid=141336</item>
-        <item>http://www.rw.by/schedule/suburban/?stid=141213</item>
-        <item>http://www.rw.by/schedule/suburban/?stid=141302</item>
-        <item>http://www.rw.by/schedule/suburban/?stid=141317</item>
-        <item>http://www.rw.by/schedule/suburban/?stid=141321</item>
-        <item>http://www.rw.by/schedule/suburban/?stid=141406</item>
-
+        <item>Институт Культуры</item>
+        <item>Минск-Восточный</item>
+        <item>Тракторный</item>
+        <item>Товарный двор</item>
+        <item>Степянка</item>
+        <item>Озерище</item>
+        <item>Колодищи</item>
+        <item>Садовый</item>
+        <item>Городище</item>
+        <item>Слобода</item>
+        <item>Домашаны</item>
+        <item>Загорье</item>
+        <item>Смолевичи</item>
+        <item>Заречное</item>
+        <item>Красное знамя</item>
+        <item>Барсуки</item>
+        <item>Жодино-Южное</item>
+        <item>Пролетарская Победа</item>
+        <item>Печинский</item>
+        <item>Борисов</item>
+        <item>Березина</item>
+        <item>Неманица</item>
+        <item>Навасады</item>
+        <item>Замужанье</item>
+        <item>Приямино</item>
+        <item>Бережок</item>
+        <item>Крупки</item>
     </string-array>
 
     <string-array name="weekDaysUS">

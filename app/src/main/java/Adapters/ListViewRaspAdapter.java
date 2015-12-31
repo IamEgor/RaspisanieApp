@@ -1,7 +1,5 @@
 package Adapters;
 
-import java.util.List;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,15 +7,17 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.raspisanie_proj.R;
-import com.example.raspisanie_proj.rasp;
+import com.example.raspviewproj.R;
+import com.example.raspviewproj.RaspisanieContent;
 
-public class ListViewRaspAdapter extends ArrayAdapter<rasp> {
+import java.util.List;
+
+public class ListViewRaspAdapter extends ArrayAdapter<RaspisanieContent> {
 
     private final Context context;
-    private List<rasp> ListRasp;
+    private List<RaspisanieContent> ListRasp;
 
-    public ListViewRaspAdapter(Context context, List<rasp> ListRasp) {
+    public ListViewRaspAdapter(Context context, List<RaspisanieContent> ListRasp) {
         super(context, R.layout.list_item_rasp, ListRasp);
         this.context = context;
         this.ListRasp = ListRasp;
@@ -29,8 +29,7 @@ public class ListViewRaspAdapter extends ArrayAdapter<rasp> {
 
         View view = inflater.inflate(R.layout.list_item_rasp, parent, false);
 
-
-        rasp rasp = getuser(position);
+        RaspisanieContent rasp = getuser(position);
 
         TextView textViewOut = (TextView) view.findViewById(R.id.textView_Out);
         TextView textViewIn = (TextView) view.findViewById(R.id.textView_In);
@@ -42,11 +41,11 @@ public class ListViewRaspAdapter extends ArrayAdapter<rasp> {
         String te = rasp.getmWent() + "-" + rasp.getmCome();
         textViewComeOut.setText(te);
 
-        return view;
 
+        return view;
     }
 
-    private rasp getuser(int position) {
-        return (rasp) ListRasp.get(position);
+    private RaspisanieContent getuser(int position) {
+        return (RaspisanieContent) ListRasp.get(position);
     }
 }
