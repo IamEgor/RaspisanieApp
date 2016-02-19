@@ -1,151 +1,176 @@
 [{
   "id": 1,
-  "shortDescription": "Syndactyl toe w fusion",
-  "fullDescription": "Syndactyly of toes with fusion of bone",
-  "price": "$182.11",
+  "shortDescription": "Loc 2nd osteoarthr-l/leg",
+  "fullDescription": "Osteoarthrosis, localized, secondary, lower leg",
+  "price": "$136.05",
+  "dateTime": "2015-02-19 15:26:42",
   "image": "http://dummyimage.com/240x100.png/dddddd/000000"
 }, {
   "id": 2,
-  "shortDescription": "Pois-ant pituitary horm",
-  "fullDescription": "Poisoning by anterior pituitary hormones",
-  "price": "$52.16",
-  "image": "http://dummyimage.com/240x100.png/ff4444/ffffff"
-}, {
-  "id": 3,
-  "shortDescription": "Anal sphinctr tear w p/p",
-  "fullDescription": "Anal sphincter tear complicating delivery, not associated with third-degree perineal laceration, postpartum condition or complication",
-  "price": "$65.56",
+  "shortDescription": "War inj-unconven war NOS",
+  "fullDescription": "Injury due to unspecified form of unconventional warfare",
+  "price": "$183.68",
+  "dateTime": "2015-09-01 19:34:29",
   "image": "http://dummyimage.com/240x100.png/cc0000/ffffff"
 }, {
+  "id": 3,
+  "shortDescription": "Attic perf tympanic memb",
+  "fullDescription": "Attic perforation of tympanic membrane",
+  "price": "$111.27",
+  "dateTime": "2016-01-05 01:03:54",
+  "image": "http://dummyimage.com/240x100.png/dddddd/000000"
+}, {
   "id": 4,
-  "shortDescription": "Scrn unspcf viral dis",
-  "fullDescription": "Special screening examination for unspecified viral disease",
-  "price": "$161.80",
+  "shortDescription": "Malposition NOS-antepart",
+  "fullDescription": "Unspecified malposition or malpresentation, antepartum condition or complication",
+  "price": "$17.66",
+  "dateTime": "2016-01-16 00:00:11",
   "image": "http://dummyimage.com/240x100.png/cc0000/ffffff"
 }, {
   "id": 5,
-  "shortDescription": "CV dis NEC-antepartum",
-  "fullDescription": "Other cardiovascular diseases of mother, antepartum condition or complication",
-  "price": "$94.60",
-  "image": "http://dummyimage.com/240x100.png/dddddd/000000"
+  "shortDescription": "Abrasion NEC",
+  "fullDescription": "Abrasion or friction burn of other, multiple, and unspecified sites, without mention of infection",
+  "price": "$93.13",
+  "dateTime": "2015-12-28 20:55:05",
+  "image": "http://dummyimage.com/240x100.png/ff4444/ffffff"
 }, {
   "id": 6,
-  "shortDescription": "Lichen NOS",
-  "fullDescription": "Lichen, unspecified",
-  "price": "$62.09",
-  "image": "http://dummyimage.com/240x100.png/cc0000/ffffff"
+  "shortDescription": "Fam hx-psychiatric cond",
+  "fullDescription": "Family history of psychiatric condition",
+  "price": "$142.65",
+  "dateTime": "2015-06-29 06:47:31",
+  "image": "http://dummyimage.com/240x100.png/5fa2dd/ffffff"
 }, {
   "id": 7,
-  "shortDescription": "Syphil acoustic neuritis",
-  "fullDescription": "Syphilitic acoustic neuritis",
-  "price": "$160.71",
-  "image": "http://dummyimage.com/240x100.png/dddddd/000000"
+  "shortDescription": "Sympt hemophil a carrier",
+  "fullDescription": "Symptomatic hemophilia A carrier",
+  "price": "$136.91",
+  "dateTime": "2015-11-24 23:51:56",
+  "image": "http://dummyimage.com/240x100.png/cc0000/ffffff"
 }, {
   "id": 8,
-  "shortDescription": "Foreign bdy vulva/vagina",
-  "fullDescription": "Foreign body in vulva and vagina",
-  "price": "$118.22",
+  "shortDescription": "TB of hip-no exam",
+  "fullDescription": "Tuberculosis of hip, bacteriological or histological examination not done",
+  "price": "$140.57",
+  "dateTime": "2016-02-05 19:48:24",
   "image": "http://dummyimage.com/240x100.png/cc0000/ffffff"
 }, {
   "id": 9,
-  "shortDescription": "Adv eff spinal anesthet",
-  "fullDescription": "Spinal anesthetics causing adverse effects in therapeutic use",
-  "price": "$195.33",
+  "shortDescription": "Eczema herpeticum",
+  "fullDescription": "Eczema herpeticum",
+  "price": "$170.27",
+  "dateTime": "2015-06-20 14:28:23",
   "image": "http://dummyimage.com/240x100.png/cc0000/ffffff"
 }, {
   "id": 10,
-  "shortDescription": "Chr pul manif d/t radiat",
-  "fullDescription": "Chronic and other pulmonary manifestations due to radiation",
-  "price": "$83.88",
+  "shortDescription": "Cracked nipple-postpart",
+  "fullDescription": "Cracked nipple associated with childbirth, postpartum condition or complication",
+  "price": "$43.42",
+  "dateTime": "2015-11-07 04:06:34",
   "image": "http://dummyimage.com/240x100.png/dddddd/000000"
 }, {
   "id": 11,
-  "shortDescription": "Late ef-hemiplga non-dom",
-  "fullDescription": "Late effects of cerebrovascular disease, hemiplegia affecting nondominant side",
-  "price": "$163.60",
-  "image": "http://dummyimage.com/240x100.png/cc0000/ffffff"
+  "shortDescription": "NB respiratory arrest",
+  "fullDescription": "Respiratory arrest of newborn",
+  "price": "$156.39",
+  "dateTime": "2015-05-17 19:24:35",
+  "image": "http://dummyimage.com/240x100.png/5fa2dd/ffffff"
 }, {
   "id": 12,
-  "shortDescription": "Myotonic chondrodystrphy",
-  "fullDescription": "Myotonic chondrodystrophy",
-  "price": "$190.20",
-  "image": "http://dummyimage.com/240x100.png/dddddd/000000"
+  "shortDescription": "Opn skul vlt fx-mod coma",
+  "fullDescription": "Open fracture of vault of skull with cerebral laceration and contusion, with moderate [1-24 hours] loss of consciousness",
+  "price": "$88.20",
+  "dateTime": "2015-11-15 08:22:01",
+  "image": "http://dummyimage.com/240x100.png/5fa2dd/ffffff"
 }, {
   "id": 13,
-  "shortDescription": "Loiasis",
-  "fullDescription": "Loiasis",
-  "price": "$149.50",
-  "image": "http://dummyimage.com/240x100.png/ff4444/ffffff"
+  "shortDescription": "Acute gastritis w hmrhg",
+  "fullDescription": "Acute gastritis, with hemorrhage",
+  "price": "$93.36",
+  "dateTime": "2015-12-01 03:55:43",
+  "image": "http://dummyimage.com/240x100.png/cc0000/ffffff"
 }, {
   "id": 14,
-  "shortDescription": "Injury popliteal artery",
-  "fullDescription": "Injury to popliteal artery",
-  "price": "$78.89",
-  "image": "http://dummyimage.com/240x100.png/dddddd/000000"
+  "shortDescription": "War inj:expl mine-cease",
+  "fullDescription": "Injury due to war operations but occurring after cessation of hostilities by explosion of mines",
+  "price": "$196.70",
+  "dateTime": "2016-02-18 09:02:30",
+  "image": "http://dummyimage.com/240x100.png/5fa2dd/ffffff"
 }, {
   "id": 15,
-  "shortDescription": "RR acc w explos-pers NEC",
-  "fullDescription": "Railway accident involving explosion, fire, or burning injuring other specified person",
-  "price": "$199.68",
+  "shortDescription": "Row,canoe,kayk,raft,tube",
+  "fullDescription": "Activities involving rowing, canoeing, kayaking, rafting and tubing",
+  "price": "$139.09",
+  "dateTime": "2015-08-25 23:35:34",
   "image": "http://dummyimage.com/240x100.png/5fa2dd/ffffff"
 }, {
   "id": 16,
-  "shortDescription": "Gangr incisional hernia",
-  "fullDescription": "Incisional ventral hernia, with gangrene",
-  "price": "$107.30",
-  "image": "http://dummyimage.com/240x100.png/cc0000/ffffff"
+  "shortDescription": "Trampoline",
+  "fullDescription": "Activities involving trampoline",
+  "price": "$21.82",
+  "dateTime": "2015-12-29 20:33:15",
+  "image": "http://dummyimage.com/240x100.png/dddddd/000000"
 }, {
   "id": 17,
-  "shortDescription": "Fall in sports",
-  "fullDescription": "Fall on same level from collision, pushing, or shoving, by or with other person in sports",
-  "price": "$97.21",
-  "image": "http://dummyimage.com/240x100.png/5fa2dd/ffffff"
+  "shortDescription": "Trichomonal prostatitis",
+  "fullDescription": "Trichomonal prostatitis",
+  "price": "$126.38",
+  "dateTime": "2015-08-21 02:15:00",
+  "image": "http://dummyimage.com/240x100.png/ff4444/ffffff"
 }, {
   "id": 18,
-  "shortDescription": "Lung injury NOS-closed",
-  "fullDescription": "Unspecified injury of lung without mention of open wound into thorax",
-  "price": "$44.58",
+  "shortDescription": "Ac bulbar polio-type 3",
+  "fullDescription": "Acute paralytic poliomyelitis specified as bulbar, poliovirus type III",
+  "price": "$28.91",
+  "dateTime": "2015-08-14 18:31:35",
   "image": "http://dummyimage.com/240x100.png/cc0000/ffffff"
 }, {
   "id": 19,
-  "shortDescription": "Ac DVT/embl up ext",
-  "fullDescription": "Acute venous embolism and thrombosis of deep veins of upper extremity",
-  "price": "$66.44",
-  "image": "http://dummyimage.com/240x100.png/5fa2dd/ffffff"
+  "shortDescription": "Dysphagia NEC",
+  "fullDescription": "Other dysphagia",
+  "price": "$169.98",
+  "dateTime": "2015-07-23 10:33:22",
+  "image": "http://dummyimage.com/240x100.png/cc0000/ffffff"
 }, {
   "id": 20,
-  "shortDescription": "Congenital heart block",
-  "fullDescription": "Congenital heart block",
-  "price": "$151.77",
-  "image": "http://dummyimage.com/240x100.png/cc0000/ffffff"
-}, {
-  "id": 21,
-  "shortDescription": "Mult open wnd nose-compl",
-  "fullDescription": "Open wound of multiple sites of nose, complicated",
-  "price": "$152.39",
-  "image": "http://dummyimage.com/240x100.png/ff4444/ffffff"
-}, {
-  "id": 22,
-  "shortDescription": "Scrn mal neo breast NEC",
-  "fullDescription": "Other screening breast examination",
-  "price": "$85.14",
-  "image": "http://dummyimage.com/240x100.png/cc0000/ffffff"
-}, {
-  "id": 23,
-  "shortDescription": "Urin-genital fistul, fem",
-  "fullDescription": "Urinary-genital tract fistula, female",
-  "price": "$53.50",
+  "shortDescription": "Periodontal disease NEC",
+  "fullDescription": "Other specified periodontal diseases",
+  "price": "$138.70",
+  "dateTime": "2015-09-04 13:56:23",
   "image": "http://dummyimage.com/240x100.png/dddddd/000000"
 }, {
-  "id": 24,
-  "shortDescription": "Old laceration of vulva",
-  "fullDescription": "Old laceration or scarring of vulva",
-  "price": "$15.65",
+  "id": 21,
+  "shortDescription": "Acc pois-agrcult NEC/NOS",
+  "fullDescription": "Accidental poisoning by other and unspecified agricultural and horticultural chemical and pharmaceutical preparations other than plant foods and fertilizers",
+  "price": "$149.57",
+  "dateTime": "2015-08-23 20:24:58",
   "image": "http://dummyimage.com/240x100.png/5fa2dd/ffffff"
 }, {
-  "id": 25,
-  "shortDescription": "Cont/exp hazard sub NEC",
-  "fullDescription": "Contact with and (suspected) exposure to other potentially hazardous substances",
-  "price": "$167.67",
+  "id": 22,
+  "shortDescription": "Fx scapul, corac proc-op",
+  "fullDescription": "Open fracture of coracoid process",
+  "price": "$144.25",
+  "dateTime": "2015-07-12 17:10:27",
+  "image": "http://dummyimage.com/240x100.png/dddddd/000000"
+}, {
+  "id": 23,
+  "shortDescription": "Sec DM circ uncontrld",
+  "fullDescription": "Secondary diabetes mellitus with peripheral circulatory disorders, uncontrolled",
+  "price": "$41.51",
+  "dateTime": "2015-10-05 03:09:10",
+  "image": "http://dummyimage.com/240x100.png/cc0000/ffffff"
+}, {
+  "id": 24,
+  "shortDescription": "Basal cell ca skn up lmb",
+  "fullDescription": "Basal cell carcinoma of skin of upper limb, including shoulder",
+  "price": "$161.19",
+  "dateTime": "2015-09-05 15:52:33",
   "image": "http://dummyimage.com/240x100.png/ff4444/ffffff"
+}, {
+  "id": 25,
+  "shortDescription": "Schmorl's nodes NOS",
+  "fullDescription": "Schmorl's nodes, unspecified region",
+  "price": "$81.69",
+  "dateTime": "2015-12-22 20:05:18",
+  "image": "http://dummyimage.com/240x100.png/5fa2dd/ffffff"
 }]
